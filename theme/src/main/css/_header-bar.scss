@@ -1,0 +1,17 @@
+.header-bar {
+	-fx-min-height: 48px;
+	-fx-pref-height: 48px;
+	-fx-alignment: CENTER_LEFT;
+
+	> .header-bar-title {
+		-fx-font-size: 12px;
+		-fx-line-spacing: 16px;
+		-fx-padding: 0 0 0 48;
+		-fx-graphic-text-gap: 8;
+	}
+}
+
+.back-button {
+	-fx-font-family: "Segoe Fluent Icons";
+	-fx-font-size: 12;
+}

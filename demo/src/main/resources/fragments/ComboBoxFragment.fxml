@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="ComboBox" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="Use a ComboBox when you need to conserve on-screen space and when users select only one option at a time. A ComboBox shows only the currently selected item." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A ComboBox with items defined inline." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<Label text="Colors"/>
+
+						<ComboBox promptText="Pick a color">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Blue"/>
+									<String fx:value="Green"/>
+									<String fx:value="Red"/>
+									<String fx:value="Yellow"/>
+								</FXCollections>
+							</items>
+						</ComboBox>
+
+						<ChoiceBox value="Red">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Blue"/>
+									<String fx:value="Green"/>
+									<String fx:value="Red"/>
+									<String fx:value="Yellow"/>
+								</FXCollections>
+							</items>
+						</ChoiceBox>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%combobox.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="An editable ComboBox." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<Label text="Font size"/>
+						<ComboBox promptText="Pick a color" editable="true">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="8"/>
+									<String fx:value="9"/>
+									<String fx:value="10"/>
+									<String fx:value="11"/>
+									<String fx:value="12"/>
+									<String fx:value="14"/>
+									<String fx:value="16"/>
+									<String fx:value="18"/>
+									<String fx:value="20"/>
+									<String fx:value="24"/>
+									<String fx:value="28"/>
+									<String fx:value="36"/>
+									<String fx:value="48"/>
+									<String fx:value="72"/>
+								</FXCollections>
+							</items>
+						</ComboBox>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%combobox.sample2" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

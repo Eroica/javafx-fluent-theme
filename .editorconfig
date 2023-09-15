@@ -1,0 +1,20 @@
+root = true
+
+[*]
+max_line_length = 99
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{kt,kts}]
+max_line_length = 120
+indent_style = space
+indent_size = 4
+
+[*.{html,xml,fxml,ui}]
+max_line_length = off
+indent_style = tab
+indent_size = 3
+
+[*.{css,scss}]
+indent_style = tab
+indent_size = 2

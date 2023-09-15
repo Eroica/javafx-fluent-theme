@@ -1,0 +1,80 @@
+.button,
+.menu-button,
+.toggle-button {
+	-fx-background-color: #cccccc, #e5e5e5, #fbfbfb;
+	-fx-background-insets: 0, 0 0 1 0, 1;
+	-fx-background-radius: 5px, 5px, 4px;
+	-fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+	-fx-text-fill: -fx-text-base-color;
+	-fx-alignment: CENTER;
+	-fx-content-display: LEFT;
+
+	&:hover {
+		-fx-background-color: #cccccc, #e5e5e5, #f6f6f6;
+	}
+	&:armed {
+		-fx-background-color: #e5e5e5, #e5e5e5, #f5f5f5;
+		-fx-text-fill: -TextFillColorSecondaryBrush;
+	}
+	&:disabled {
+		-fx-background-color: #e4e4e4, #e4e4e4, #f5f5f5;
+		-fx-text-fill: -TextFillColorDisabledBrush;
+	}
+	&:focus-visible {
+		-fx-border-width: 2;
+		-fx-border-color: -FocusStrokeColorOuterBrush;
+		-fx-border-style: solid;
+		-fx-border-insets: -4;
+		-fx-border-radius: 9;
+	}
+
+	&.borderless-button {
+		-fx-background-color: transparent, transparent, transparent;
+
+		&:hover {
+			-fx-background-color: #eaeaea;
+		}
+	}
+}
+.button:default, .button.accent-button,
+.toggle-button:selected {
+	-fx-background-color: #003e73, #1473c5, #0067c0;
+	-fx-text-fill: #ffffff;
+
+	&:hover {
+		-fx-background-color: #0f4676, #2b80ca, #1975c5;
+	}
+	&:armed {
+		-fx-background-color: #3183ca, #3183ca, #3183ca;
+		-fx-text-fill: #fdfdfd;
+	}
+	&:disabled {
+		-fx-background-color: #bfbfbf, #bfbfbf, #bfbfbf;
+	}
+}
+
+.menu-button > .label {
+	-fx-alignment: CENTER_LEFT;
+}
+.menu-button:openvertically > .arrow-button {
+	-fx-background-radius: 0 3 3 0, 0 2 2 0, 0 1 1 0;
+	-fx-padding: 0 0 0 0.416667em;
+}
+.menu-button:openvertically > .arrow-button > .arrow {
+	-fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+	-fx-background-insets: 0 0 -1 0, 0;
+	-fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; /* 2 4 2 4 */
+	-fx-shape: "M 0 0.75 L 3.75 4.5 L 7.5 0.75 L 6.75 0 L 3.75 3 L 0.75 0 Z";
+	-fx-scale-shape: false;
+}
+
+/* This is a special case when an icon is used as the "graphic" of a Button. The icon is inside
+   a Text node which doesn't have a ".text" class though; this makes it possible to tell it apart
+   from the button's label (which is a LabeledText with a ".text" class). */
+.button.icon-button > Text {
+	-fx-font-family: "Segoe Fluent Icons";
+	-fx-font-size: 1.166667em;
+}
+.button.icon-button {
+	-fx-graphic-text-gap: 1em;
+}

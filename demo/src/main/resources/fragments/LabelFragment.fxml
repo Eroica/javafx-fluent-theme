@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="Label/TextFlow" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="Label is the primary control for displaying read-only text in your app. You typically display text by setting the Text property to a simple string. You can also display a series of strings in TextFlow elements and give each different formatting." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A simple Label." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<Label text="I am a Label."/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%label.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="A Label with a style applied." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<Label text="I am a styled Label." style="-fx-font-family: 'Comic Sans MS'; -fx-font-style: italic;"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%label.sample2" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="A TextFlow with inline Text elements." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<TextFlow>
+							<Text>Text in a TextFlow doesn’t have to be a simple string.&#x00a0;</Text>
+							<Text>Text can be&#x00a0;</Text>
+							<Text style="-fx-font-family: 'Segoe UI Semibold';">bold</Text>
+							<Text>,&#x00a0;</Text>
+							<Text style="-fx-font-style: italic;">italic</Text>
+							<Text>,&#x00a0;</Text>
+							<Text>or&#x00a0;</Text>
+							<Text style="-fx-underline: true;">underlined</Text>
+							<Text>&#x00a0;(and even&#x00a0;</Text>
+							<Text style="-fx-strikethrough: true;">strikethroughed</Text>
+							<Text>).</Text>
+						</TextFlow>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%label.sample3" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

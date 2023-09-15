@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<HBox xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" styleClass="sidebar-item" alignment="CENTER_RIGHT" spacing="8.0">
+	<padding>
+		<Insets top="0.0" right="16.0" bottom="0.0" left="16.0"/>
+	</padding>
+	<Label text="${controller.item.label}"/>
+	<Label styleClass="glyph" text="${controller.item.glyph}"/>
+</HBox>

@@ -1,0 +1,162 @@
+/* Copyright (C) 2023 Eroica
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty.  In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ */
+
+.no-focus .content-container {
+	-fx-background-color: #e1e6ea, #f9f9f9;
+	-fx-background-radius: 10 0 0 0, 9 0 0 0;
+	-fx-background-insets: 0, 1;
+	-fx-padding: 1;
+}
+.no-focus .content-container > * > .scroll-pane {
+	-fx-background-color: #f9f9f9;
+}
+
+.use-mica.activity,
+.use-mica .sidebar {
+	-fx-background-color: transparent;
+}
+
+.sidebar {
+}
+.sidebar-footer {
+	-fx-border-width: 1 0 0 0;
+	-fx-border-style: solid;
+	-fx-border-color: #e5e5e5;
+}
+.sidebar-footer .button {
+	-fx-alignment: CENTER_LEFT;
+}
+.sidebar-footer .button:hover {
+	-fx-background-color: rgba(0, 0, 0, .03);
+}
+.sidebar .tree-cell {
+	-fx-content-display: graphic-only;
+	-fx-skin: "views.SidebarCellSkin";
+}
+.sidebar .tree-cell:filled:hover,
+.sidebar .tree-cell:selected {
+	-fx-background-color: rgba(0, 0, 0, .03);
+}
+.sidebar .tree-cell:filled:pressed {
+	-fx-background-color: rgba(0, 0, 0, .05);
+}
+.sidebar .tree-disclosure-node {
+	-fx-padding: 20 16 20 16;
+}
+.sidebar .tree-cell:collapsed .tree-disclosure-node > .arrow {
+	-fx-rotate: 90;
+}
+.sidebar .tree-cell:expanded .tree-disclosure-node > .arrow {
+	-fx-rotate: -90;
+}
+.sidebar .sidebar-item .glyph {
+	-fx-font-family: "Segoe Fluent Icons";
+	-fx-font-size: 16;
+}
+
+.content-container {
+	-fx-background-color: #e1e6ea, #f7fafc;
+	-fx-background-radius: 10 0 0 0, 9 0 0 0;
+	-fx-background-insets: 0, 1;
+	-fx-padding: 1;
+}
+.content-header {
+	-fx-padding: 36 0 0 36;
+}
+.content-container > * > .scroll-pane {
+	-fx-background-color: #f7fafc;
+}
+
+.card {
+	-fx-background-color: #e5e5e5, #fbfbfb;
+	-fx-background-insets: 0, 1;
+	-fx-background-radius: 4, 3;
+}
+.card .icon, .icon-label {
+	-fx-font-family: "Segoe Fluent Icons";
+	-fx-font-size: 20;
+}
+.example > .example-header {
+	-fx-background-color: #e9e9e9, #f3f3f3;
+	-fx-background-insets: 0, 1;
+	-fx-background-radius: 10 10 0 0, 9 9 0 0;
+	-fx-padding: 12 12 12 12;
+}
+.example > .titled-pane > .title {
+	-fx-background-radius: 0 0 10 10, 0 0 9 9;
+}
+.example > .titled-pane:expanded > .title {
+	-fx-background-radius: 0, 0;
+}
+
+.code-sample {
+	-fx-padding: 8;
+	-fx-background-color: transparent, transparent;
+}
+.code-sample .content {
+	-fx-background-color: #f4f4f4;
+}
+
+.type-ramp .label.heading {
+	-fx-font-size: 12px;
+	-fx-text-fill: #5d5d5d;
+}
+.type-ramp .label {
+	-fx-padding: 8 8 8 8;
+}
+
+.home-fragment {
+	-fx-padding: 68 36 12 36;
+	-fx-min-height: 600;
+	-fx-background-image: url("/GalleryHeaderImage.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: 0 0;
+	-fx-background-size: cover;
+	-fx-background-radius: 10 0 0 0;
+}
+.home-card {
+	-fx-spacing: 4;
+	-fx-pref-width: 195;
+	-fx-padding: 30 12 12 23;
+	-fx-background-color: #f9f9f9;
+	-fx-background-radius: 5;
+	-fx-border-color: rgba(0, 0, 0, .1);
+	-fx-border-width: 1;
+	-fx-border-radius: 5;
+}
+.home-card:hover {
+	-fx-cursor: hand;
+	-fx-background-color: #e5e5e5;
+	-fx-border-color: rgba(0, 0, 0, .25);
+}
+.home-card > .body-large {
+	-fx-padding: 8 0 0 0;
+}
+.home-card > .caption {
+	-fx-text-fill: #555555;
+}
+.home-card > .footer {
+	-fx-alignment: CENTER_RIGHT;
+	-fx-padding: 8 0 0 0;
+}
+.home-fragment .sample-card {
+	-fx-padding: 12;
+	-fx-spacing: 12;
+	-fx-pref-width: 360;
+}

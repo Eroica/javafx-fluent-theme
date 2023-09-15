@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="CheckBox" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="CheckBox controls let the user select a combination of binary options. In contrast, RadioButton controls allow the user to select from mutually exclusive options. The indeterminate state is used to indicate that an option is set for some, but not all, child options. Don't allow users to set an indeterminate state directly to indicate a third option." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A 2-state CheckBox." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<CheckBox text="Two-state CheckBox"/>
+						<CheckBox text="Disabled two-state CheckBox" disable="true"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%checkbox.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="A 3-state CheckBox" styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<CheckBox text="Three-state CheckBox" allowIndeterminate="true" indeterminate="true"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%checkbox.sample2" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

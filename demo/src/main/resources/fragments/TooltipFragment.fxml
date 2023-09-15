@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import views.FluentTooltip?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="Tooltip" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="A Tooltip shows more information about a UI element. You might show information about what the element does, or what the user should do. The Tooltip is shown when a user hovers over the UI element." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="Two buttons with Tooltips." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<Label text="In javafx-fluent-theme, there is a simple tooltip which has only been styled with CSS, and a custom “FluentTooltip” that will also gradually fade in. Whenever you want this effect, you need to replace JavaFX’ Tooltip with FluentTooltip." wrapText="true"/>
+
+						<HBox spacing="4.0">
+							<Button text="Button with a simple Tooltip">
+								<tooltip>
+									<Tooltip text="Simple Tooltip"/>
+								</tooltip>
+							</Button>
+							<Button text="Button with a FluentTooltip">
+								<tooltip>
+									<FluentTooltip text="FluentTooltip"/>
+								</tooltip>
+							</Button>
+						</HBox>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%tooltip.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

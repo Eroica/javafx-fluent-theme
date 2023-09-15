@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="HeaderBar" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="This sample shows how to use a custom-built HeaderBar to replace Windows’ default window frame." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="User-defined HeaderBar as custom title bar for the application’s window" styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<Label text="You can remove Windows’ default title bar to get more space for the rest of your app’s UI, or to replace the traditional icon and window title combination. After removing the title bar, you need to add a DragPane to your replacement bar to be able to move the window around, and to trigger Windows’ native window snapping." wrapText="true"/>
+						<Button text="Toggle HeaderBar" onAction="#onToggleHeaderBar"/>
+						<Label text="${'Currently using HeaderBar: ' + controller.activity.isHeaderBar}" styleClass="fluent, body-strong"/>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%headerbar.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>
