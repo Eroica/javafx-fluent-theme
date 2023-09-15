@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="Button" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="The Button control provides a Click event to respond to user input from a touch, mouse, keyboard, stylus, or other input device. You can put different kinds of content in a button, such as text or an image, or you can restyle a button to give it a new look." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A simple Button with text content." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<Button text="Standard FXML button"/>
+						<Button text="Disabled FXML button" disable="true"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%button.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="A Button with graphical content." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<Button>
+							<graphic>
+								<ImageView>
+									<Image url="@/assets/Slices.png"/>
+								</ImageView>
+							</graphic>
+						</Button>
+
+						<Button disable="true">
+							<graphic>
+								<ImageView>
+									<Image url="@/assets/Slices.png"/>
+								</ImageView>
+							</graphic>
+						</Button>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%button.sample2" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="Wrapping Buttons with large content." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<Label text="The following buttons' content may get clipped if we don't pay careful attention to their layout containers."/>
+						<Label text="One option to mitigate clipped content is to place Buttons underneath each other, allowing for more space to grow horizontally:"/>
+						<Button text="This is some text that is too long and will get cut off"/>
+						<Button text="This is another text that would result in being cut off" disable="true"/>
+						<Label text="Another option is to explicitly wrap the Button's content"/>
+
+						<HBox spacing="8.0">
+							<Button text="This is some text that is too long and will get cut off without wrapping" wrapText="true"/>
+							<Button text="This is some text that is too long and will get cut off without wrapping" wrapText="true"/>
+						</HBox>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%button.sample3" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="Accent style applied to Button." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<Button text="Accent style button" styleClass="accent-button"/>
+						<Button text="Disabled accent style button" styleClass="accent-button" disable="true"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%button.sample4" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

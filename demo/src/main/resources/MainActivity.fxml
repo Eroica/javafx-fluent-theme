@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import views.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefWidth="1200.0" prefHeight="720.0" styleClass="activity, use-mica">
+	<HeaderBar visible="${controller.isHeaderBar}" managed="${controller.isHeaderBar}">
+		<padding>
+			<Insets top="4.0" right="8.0" bottom="4.0" left="8.0"/>
+		</padding>
+		<Button text="&#xe830;" styleClass="borderless-button, back-button" disable="true"></Button>
+		<DragPane HBox.hgrow="ALWAYS"/>
+	</HeaderBar>
+
+	<HBox VBox.vgrow="ALWAYS">
+		<VBox prefWidth="320.0" minWidth="320.0" spacing="4.0">
+			<!-- TODO Add search icon -->
+			<TextField promptText="Search" disable="true">
+				<VBox.margin>
+					<Insets top="8.0" right="8.0" bottom="8.0" left="8.0"/>
+				</VBox.margin>
+			</TextField>
+
+			<TreeView styleClass="sidebar" prefWidth="320.0" minWidth="320.0" fx:id="sidebar" showRoot="false" VBox.vgrow="ALWAYS" fixedCellSize="40.0">
+				<cellFactory>
+					<SidebarCellFactory/>
+				</cellFactory>
+
+				<TreeItem>
+					<children>
+						<TreeItem>
+							<value>
+								<SidebarItem label="Home" glyph="&#xe80f;" fragment="Home"/>
+							</value>
+						</TreeItem>
+						<TreeItem>
+							<value>
+								<SidebarItem label="Design guidance" glyph="&#xEB3C;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Typography" fragment="Typography"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<TreeItem>
+							<value>
+								<SidebarSeparator/>
+							</value>
+						</TreeItem>
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Basic input" glyph="&#xE73A;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Button" fragment="Button"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="MenuButton" fragment="MenuButton"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Hyperlink" fragment="Hyperlink"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="ToggleButton" fragment="ToggleButton"/>
+									</value>
+								</TreeItem>
+								<!-- TODO SplitButton -->
+								<!-- TODO ToggleSplitButton -->
+								<TreeItem>
+									<value>
+										<SidebarItem label="CheckBox" fragment="CheckBox"/>
+									</value>
+								</TreeItem>
+								<!-- TODO ColorPicker -->
+								<TreeItem>
+									<value>
+										<SidebarItem label="ComboBox" fragment="ComboBox"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="RadioButton" fragment="RadioButton"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Slider" fragment="Slider"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Spinner" fragment="Spinner"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<!-- TODO Collections -->
+<!--						<TreeItem>-->
+<!--							<value>-->
+<!--								<SidebarItem label="Collections" glyph="&#xE80A;"/>-->
+<!--							</value>-->
+<!--							<children>-->
+<!--							</children>-->
+<!--						</TreeItem>-->
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Date &amp; time" glyph="&#xEC92;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="DatePicker" fragment="DatePicker"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<!-- TODO Dialogs & flyouts -->
+<!--						<TreeItem>-->
+<!--							<value>-->
+<!--								<SidebarItem label="Dialogs &amp; flyouts" glyph="&#xE15F;"/>-->
+<!--							</value>-->
+<!--							<children>-->
+<!--							</children>-->
+<!--						</TreeItem>-->
+
+						<!-- TODO Layout -->
+<!--						<TreeItem>-->
+<!--							<value>-->
+<!--								<SidebarItem label="Layout" glyph="&#xE8A1;"/>-->
+<!--							</value>-->
+<!--							<children>-->
+<!--							</children>-->
+<!--						</TreeItem>-->
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Menus &amp; toolbars" glyph="&#xE74E;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="MenuBar" fragment="MenuBar"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<!-- TODO Scrolling -->
+<!--						<TreeItem>-->
+<!--							<value>-->
+<!--								<SidebarItem label="Scrolling" glyph="&#xE174;"/>-->
+<!--							</value>-->
+<!--							<children>-->
+<!--							</children>-->
+<!--						</TreeItem>-->
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Status &amp; info" glyph="&#xE8F2;"/>
+							</value>
+							<children>
+								<!-- TODO InfoBar -->
+								<TreeItem>
+									<value>
+										<SidebarItem label="ProgressBar" fragment="ProgressBar"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Tooltip" fragment="Tooltip"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Styles" glyph="&#xE2B1;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Window background (Mica)" fragment="SystemBackdrop"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Text" glyph="&#xE8D2;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="PasswordBox" fragment="PasswordField"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Label/TextFlow" fragment="Label"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="TextField/TextArea" fragment="TextArea"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+
+						<TreeItem>
+							<value>
+								<SidebarItem label="Windowing" glyph="&#xE7C4;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="HeaderBar" fragment="HeaderBar"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
+					</children>
+				</TreeItem>
+			</TreeView>
+
+			<StackPane styleClass="sidebar-footer">
+				<padding>
+					<Insets top="12.0" right="4.0" bottom="4.0" left="4.0" />
+				</padding>
+
+				<Button text="Settings" prefWidth="320.0" prefHeight="36.0" onAction="#onSettingsClick" styleClass="borderless-button, icon-button">
+					<graphic>
+						<Text></Text>
+					</graphic>
+				</Button>
+			</StackPane>
+		</VBox>
+
+		<StackPane fx:id="fragmentContainer" styleClass="content-container" HBox.hgrow="ALWAYS"/>
+	</HBox>
+</fx:root>

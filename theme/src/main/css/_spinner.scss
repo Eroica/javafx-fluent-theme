@@ -1,0 +1,47 @@
+.spinner {
+	-fx-skin: "views.FluentSpinnerSkin";
+
+	> .text-field {
+		-fx-background-color: #868686, #e5e5e5, #fbfbfb;
+		-fx-background-insets: 0, 0 0 1 0, 1 0 1 1;
+		-fx-background-radius: 5 0 0 5, 5 0 0 5, 4 0 0 4;
+	}
+
+	> .increment-arrow-button {
+		-fx-background-color: #868686, #e5e5e5, #fbfbfb;
+		-fx-background-insets: 0 0 0 0, 0 0 1 0, 1 1 1 0;
+		-fx-background-radius: 0 5 5 0, 0 5 5 0, 0 4 4 0;
+		-fx-padding: 0 16 0 16;
+
+		.increment-arrow {
+			-fx-background-color: -fx-mark-highlight-color;
+			-fx-shape: "M0.524,5.419L0,5L4,0L4.524,0L8.524,5L8,5.419C8,5.419 4.262,0.747 4.262,0.747L0.524,5.419Z";
+			-fx-padding: 2 4 2 4;
+		}
+
+		&:hover {
+			-fx-background-color: #868686, #e5e5e5, #fbfbfb, #f2f2f2;
+			-fx-background-insets: 0 0 0 0, 0 0 1 0, 1 1 1 0, 5 5 5 5;
+			-fx-background-radius: 0, 0, 0, 3;
+		}
+	}
+
+	> .decrement-arrow-button {
+		-fx-background-color: #868686, #e5e5e5, #fbfbfb;
+		-fx-background-insets: 0 0 0 0, 0 0 1 0, 1 0 1 0;
+		-fx-background-radius: 0, 0, 0;
+		-fx-padding: 0 16 0 16;
+
+		.decrement-arrow {
+			-fx-background-color: -fx-mark-highlight-color;
+			-fx-shape: "M0.524,0L0,0.419L4,5.419L4.524,5.419L8.524,0.419L8,0C8,0 4.262,4.672 4.262,4.672L0.524,0Z";
+			-fx-padding: 2 4 2 4;
+		}
+
+		&:hover {
+			-fx-background-color: #868686, #e5e5e5, #fbfbfb, #f2f2f2;
+			-fx-background-insets: 0 0 0 0, 0 0 1 0, 1 0 1 0, 5 5 5 5;
+			-fx-background-radius: 0, 0, 0, 3;
+		}
+	}
+}

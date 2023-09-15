@@ -1,0 +1,42 @@
+.titled-pane {
+	-fx-skin: "views.FluentTitledPaneSkin";
+}
+.titled-pane:focused {
+}
+.titled-pane > .title {
+	-fx-background-color: #e5e5e5, #fbfbfb;
+	-fx-background-radius: 4, 3;
+	-fx-padding: 8 16 8 8;
+	-fx-background-insets: 0, 1;
+}
+.titled-pane:expanded > .title {
+	-fx-background-radius: 4 4 0 0, 3 3 0 0;
+}
+.titled-pane > .title > .arrow-button {
+	-fx-background-color: transparent;
+	-fx-pref-width: 40px;
+	-fx-pref-height: 32px;
+	-fx-background-radius: 4;
+	-fx-background-insets: 0 4 0 4;
+}
+.titled-pane > .title > .arrow-button > .arrow {
+	-fx-background-color: -fx-mark-color;
+	-fx-shape: "M 0 0.75 L 3.75 4.5 L 7.5 0.75 L 6.75 0 L 3.75 3 L 0.75 0 Z";
+	-fx-scale-shape: false;
+}
+.titled-pane:hover > .title > .arrow-button {
+	-fx-background-color: #f2f2f2;
+}
+.titled-pane:focus-visible > .title {
+	-fx-border-width: 2;
+	-fx-border-color: -FocusStrokeColorOuterBrush;
+	-fx-border-style: solid;
+	-fx-border-insets: -4;
+	-fx-border-radius: 3;
+}
+.titled-pane > *.content {
+	-fx-border-color: #e5e5e5;
+	-fx-border-insets: -1 0 0 0;
+	-fx-background-color: #f4f4f4;
+	-fx-border-radius: 0 0 4 4;
+}

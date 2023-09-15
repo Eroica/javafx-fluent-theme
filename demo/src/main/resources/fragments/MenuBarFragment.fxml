@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="MenuBar" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="The MenuBar simplifies the creation of basic applications by providing a set of menus at the top of the app or window." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A simple MenuBar." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<MenuBar>
+							<menus>
+								<Menu text="File">
+									<MenuItem text="New"/>
+									<MenuItem text="Open"/>
+									<MenuItem text="Save"/>
+									<MenuItem text="Exit"/>
+								</Menu>
+								<Menu text="Edit">
+									<MenuItem text="Undo"/>
+									<MenuItem text="Cut"/>
+									<MenuItem text="Copy"/>
+									<MenuItem text="Paste"/>
+								</Menu>
+								<Menu text="Help">
+									<MenuItem text="About"/>
+								</Menu>
+							</menus>
+						</MenuBar>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%menubar.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="MenuBar with keyboard accelerators." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<MenuBar>
+							<Menu text="File">
+								<MenuItem text="New">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="N" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+								<MenuItem text="Open">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="O" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+								<MenuItem text="Save">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="S" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+								<MenuItem text="Exit">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="E" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+							</Menu>
+							<Menu text="Edit">
+								<MenuItem text="Undo">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="Z" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+								<MenuItem text="Cut">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="X" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+								<MenuItem text="Copy">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="C" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+								<MenuItem text="Paste">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="V" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+							</Menu>
+							<Menu text="Help">
+								<MenuItem text="About">
+									<accelerator>
+										<KeyCodeCombination alt="ANY" code="I" control="ANY" meta="ANY" shift="ANY" shortcut="DOWN"/>
+									</accelerator>
+								</MenuItem>
+							</Menu>
+						</MenuBar>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%menubar.sample2" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="MenuBar with submenus, separators, radio items and CheckBox items." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<MenuBar>
+							<Menu text="File">
+								<Menu text="New">
+									<MenuItem text="Plain text document"/>
+									<MenuItem text="Rich text document"/>
+									<MenuItem text="Other formats"/>
+								</Menu>
+								<MenuItem text="Open"/>
+								<MenuItem text="Save"/>
+								<SeparatorMenuItem/>
+								<MenuItem text="Exit"/>
+							</Menu>
+							<Menu text="Edit">
+								<MenuItem text="Undo"/>
+								<MenuItem text="Cut"/>
+								<MenuItem text="Copy"/>
+								<MenuItem text="Paste"/>
+							</Menu>
+							<Menu text="View">
+								<fx:define>
+									<ToggleGroup fx:id="orientation"/>
+									<ToggleGroup fx:id="iconSize"/>
+								</fx:define>
+								<CheckMenuItem text="Output"/>
+								<SeparatorMenuItem/>
+								<RadioMenuItem toggleGroup="$orientation" text="Landscape"/>
+								<RadioMenuItem toggleGroup="$orientation" text="Portrait"/>
+								<SeparatorMenuItem/>
+								<RadioMenuItem toggleGroup="$iconSize" text="Small icons"/>
+								<RadioMenuItem toggleGroup="$iconSize" text="Medium icons"/>
+								<RadioMenuItem toggleGroup="$iconSize" text="Large icons"/>
+							</Menu>
+							<Menu text="Help">
+								<MenuItem text="About"/>
+							</Menu>
+						</MenuBar>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%menubar.sample3" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

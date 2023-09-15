@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import controllers.FragmentType?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+	<!-- TODO Fix top-left rounded corner when scrolling -->
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" styleClass="home-fragment">
+			<VBox>
+				<Label text="javafx-fluent-theme" style="-fx-font-size: 17;"/>
+				<Label text="JavaFX Fluent UI Gallery" styleClass="fluent, title-large"/>
+			</VBox>
+
+			<FlowPane hgap="12.0" vgap="12.0" style="-fx-padding: 68 0 0 0;">
+				<VBox styleClass="home-card" spacing="4.0" userData="https://learn.microsoft.com/de-de/windows/apps/design" onMouseClicked="#onHomeCardClick">
+					<ImageView>
+						<Image url="@/assets/Header-WindowsDesign.png" requestedWidth="64.0" requestedHeight="64.0"/>
+					</ImageView>
+					<Label text="Windows design" styleClass="fluent, body-large"/>
+					<Label text="Design guidelines and toolkits for creating native app experiences." wrapText="true" styleClass="fluent, caption"/>
+					<StackPane styleClass="footer">
+						<Label text="&#xe8a7;" styleClass="icon-label"/>
+					</StackPane>
+				</VBox>
+
+				<VBox styleClass="home-card" spacing="4.0" userData="https://github.com/Eroica/javafx-fluent-theme" onMouseClicked="#onHomeCardClick">
+					<ImageView>
+						<Image url="@/assets/github-mark.png" requestedWidth="64.0" requestedHeight="64.0"/>
+					</ImageView>
+					<Label text="javafx-fluent-theme" styleClass="fluent, body-large"/>
+					<Label text="The latest Fluent-themed controls for your JavaFX applications." wrapText="true" styleClass="fluent, caption"/>
+					<StackPane styleClass="footer">
+						<Label text="&#xe8a7;" styleClass="icon-label"/>
+					</StackPane>
+				</VBox>
+			</FlowPane>
+
+			<VBox spacing="16.0">
+				<Label text="Recently added samples" styleClass="fluent, subtitle"/>
+
+				<FlowPane vgap="12.0" hgap="12.0">
+					<HBox styleClass="card, sample-card" onMouseClicked="#onSampleClick">
+						<userData>
+							<FragmentType fx:value="SystemBackdrop"/>
+						</userData>
+						<ImageView>
+							<Image url="@/assets/Acrylic.png" requestedWidth="48.0" requestedHeight="48.0"/>
+						</ImageView>
+						<VBox HBox.hgrow="ALWAYS">
+							<Label text="Window background (Mica)" styleClass="fluent, body-strong"/>
+							<Label text="Mica background for the window." wrapText="true" styleClass="fluent, caption"/>
+						</VBox>
+						<Circle fill="#0078d4" radius="5.0" />
+					</HBox>
+
+					<HBox styleClass="card, sample-card" onMouseClicked="#onSampleClick">
+						<userData>
+							<FragmentType fx:value="HeaderBar"/>
+						</userData>
+						<ImageView>
+							<Image url="@/assets/TitleBar.png" requestedWidth="48.0" requestedHeight="48.0"/>
+						</ImageView>
+						<VBox HBox.hgrow="ALWAYS">
+							<Label text="HeaderBar" styleClass="fluent, body-strong"/>
+							<Label text="An example showing how to use a custom HeaderBar as the title bar for the app’s window." wrapText="true" styleClass="fluent, caption"/>
+						</VBox>
+						<Circle fill="#0078d4" radius="5.0" />
+					</HBox>
+				</FlowPane>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

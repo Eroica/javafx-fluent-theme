@@ -1,0 +1,73 @@
+.text {
+	/* This adjusts text alignment within the bounds of text nodes so that
+		 the text is always vertically centered within the bounds. Based on
+		 the cap height of the text. */
+	-fx-bounds-type: logical_vertical_center;
+	-fx-font-smoothing-type: gray;
+}
+
+.label {
+	-fx-text-fill: -fx-text-background-color;
+}
+
+.text-input {
+	-fx-text-fill: -fx-text-inner-color;
+	-fx-highlight-fill: -fx-accent;
+	-fx-highlight-text-fill: blue;
+	-fx-prompt-text-fill: -TextFillColorSecondaryBrush;
+	-fx-background-color: #868686, #e5e5e5, #fbfbfb;
+	-fx-background-insets: 0, 0 0 1 0, 1;
+	-fx-background-radius: 5px, 5px, 4px;
+	-fx-cursor: text;
+	-fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
+
+	&:hover {
+		-fx-background-color: #868686, #e5e5e5, #f6f6f6;
+	}
+	&:focused {
+		-fx-highlight-fill: -fx-accent;
+		-fx-highlight-text-fill: -TextOnAccentFillColorSelectedTextBrush;
+		-fx-background-color: -fx-accent, #e5e5e5, #fbfbfb;
+		-fx-background-insets: 0, 0 0 2 0, 1 1 2 1;
+		-fx-prompt-text-fill: -TextFillColorTertiaryBrush;
+	}
+}
+
+.text-area {
+	-fx-padding: 1;
+	-fx-cursor: default;
+}
+.text-area > .scroll-pane {
+	-fx-background-color: null;
+	-fx-background-radius: 4;
+	-fx-background-insets: 0 0 1 0;
+}
+.text-area > .scroll-pane > .scroll-bar:horizontal {
+	-fx-background-radius: 0 0 0 2;
+}
+.text-area > .scroll-pane > .scroll-bar:vertical {
+	-fx-background-radius: 0 2 0 0;
+}
+.text-area > .scroll-pane > .corner {
+	-fx-background-radius: 0 0 2 0;
+}
+// TODO
+.text-area .content {
+	/*the is 1px less top and bottom than TextInput because of scrollpane border */
+	-fx-padding: 0.25em 0.583em 0.25em 0.583em; /* 3 7 3 7 */
+	-fx-cursor: text;
+	-fx-background-color: null;
+	-fx-background-radius: 4;
+	-fx-background-insets: 0 0 1 0;
+}
+
+/**
+ * @since 2023-03-12
+ * It seems that in certain cases, a Text object (e.g. when inside a TextFlow) does not get an
+ * explicit `.text` class attached to it. Without this, Text inside TextFlow would fall back to the
+ * default text color (-fx-dark-text-color). So add an explicit type selector here for any Text
+ * object.
+ */
+Text {
+	-fx-fill: -fx-text-base-color;
+}

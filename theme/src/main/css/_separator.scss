@@ -1,0 +1,6 @@
+.separator:horizontal .line {
+	-fx-border-color: -fx-text-box-border transparent transparent transparent;
+}
+.separator:vertical .line {
+	-fx-border-color: transparent transparent transparent -fx-text-box-border;
+}

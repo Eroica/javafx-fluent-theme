@@ -1,0 +1,41 @@
+/**
+ * @since v2023.09
+ * Styles for label or other text according to
+ * https://learn.microsoft.com/en-us/windows/apps/design/style/typography
+ *
+ * Note that WinUI also suggests a certain line-height, but JavaFX currently doesn't have a CSS
+ * attribute for that.
+ */
+
+.fluent.caption {
+	-fx-font-size: 12px;
+}
+.fluent.body {
+	-fx-font-size: 14px;
+}
+.fluent.body-strong {
+	-fx-font-family: "Segoe UI Semibold";
+}
+
+/* Not a part of WinUI 3 gallery, even though it is mentioned at
+   https://learn.microsoft.com/en-us/windows/apps/design/style/xaml-theme-resources#the-xaml-type-ramp */
+.fluent.body-large {
+	-fx-font-size: 18px;
+}
+
+.fluent.subtitle {
+	-fx-font-family: "Segoe UI Semibold";
+	-fx-font-size: 20px;
+}
+.fluent.title {
+	-fx-font-family: "Segoe UI Semibold";
+	-fx-font-size: 28px;
+}
+.fluent.title-large {
+	-fx-font-family: "Segoe UI Semibold";
+	-fx-font-size: 40px;
+}
+.fluent.display {
+	-fx-font-family: "Segoe UI Semibold";
+	-fx-font-size: 68px;
+}

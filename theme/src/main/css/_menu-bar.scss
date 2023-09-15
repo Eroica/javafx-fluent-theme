@@ -1,0 +1,72 @@
+.menu-bar {
+	-fx-spacing: 8;
+}
+/* Show nothing for background of normal menu button in a menu bar */
+.menu-bar > .container > .menu-button {
+	-fx-background-radius: 4;
+	-fx-background-color: transparent;
+	-fx-background-insets: 0;
+}
+/* Hide the down arrow for a menu placed in a menubar */
+.menu-bar > .container > .menu-button > .arrow-button {
+	-fx-padding: 0;
+}
+.menu-bar > .container > .menu-button > .arrow-button > .arrow {
+	-fx-padding: 0;
+	-fx-background-color: transparent;
+	-fx-shape: null;
+}
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:showing {
+	-fx-background-color: -SubtleFillColorSecondaryBrush;
+}
+.menu-bar > .container .menu-button:armed {
+	-fx-background-color: -SubtleFillColorTertiaryBrush;
+}
+
+.context-menu .menu-item {
+	-fx-padding: 10 14 10 14;
+}
+.context-menu .menu-item:focused {
+	-fx-background-color: rgba(0, 0, 0, 0.04);
+	-fx-background-radius: 5;
+	-fx-background-insets: 4;
+}
+.context-menu .menu-item:pressed {
+	-fx-background-color: rgba(0, 0, 0, 0.02);
+}
+
+.menu-item {
+	> .accelerator-text {
+		-fx-font-size: 12;
+		-fx-text-fill: -TextFillColorTertiaryBrush;
+		-fx-padding: 0 0 0 24;  /* Distance to accelerator */
+	}
+}
+
+/* This is for items with a left decoration, e.g. CheckMenuItem, RadioMenuItem, etc. */
+.menu-item > .left-container {
+	-fx-padding: 0 20 0 4;
+}
+.radio-menu-item:checked > .left-container > .radio {
+	-fx-background-color: -fx-mark-color;
+	-fx-pref-width: 4;
+	-fx-pref-height: 4;
+	-fx-background-radius: 4;
+}
+.check-menu-item:checked > .left-container > .check {
+	-fx-shape: "M4.335,7.037L1.53,4.232L1,4.762L4.335,8.098L11,1.433L10.47,0.902L4.335,7.037Z";
+	-fx-scale-shape: false;
+	-fx-background-color: -fx-mark-color;
+}
+
+/* For nested menus, the place for the arrow next to the MenuItem */
+.menu > .right-container {
+	-fx-padding: 0 8 0 24;
+}
+.menu > .right-container > .arrow {
+	-fx-background-color: -fx-mark-highlight-color;
+	-fx-shape: "M 0 0.75 L 3 3.75 L 0 6.75 L 0.75 7.5 L 4.5 3.75 L 0.75 0 Z";
+	-fx-scale-shape: false;
+}

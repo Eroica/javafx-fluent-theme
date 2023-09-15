@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="Typography" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<VBox spacing="8.0">
+				<Label text="WinUI applications use Segoe UI at 14px as their GUI font. Smaller and larger labels are arranged according to the following type ramp. It’s a good idea to use pre-defined sizes to achieve a consistent look. You can use these style classes that javafx-fluent-theme provides to style your labels similar to WinUI applications." wrapText="true"/>
+
+				<Label text="Note that a JavaFX font size declared in “px” behaves similar to a CSS pixel in web browsers, taking the monitor’s display scaling into account. For example, the regular font size (14px) will actually be 28px large on monitors with 200% display scaling." wrapText="true"/>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="Type ramp" styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<GridPane hgap="16.0" styleClass="example-header, type-ramp">
+						<columnConstraints>
+							<ColumnConstraints hgrow="NEVER"/>
+							<ColumnConstraints hgrow="NEVER"/>
+							<ColumnConstraints hgrow="NEVER"/>
+							<ColumnConstraints hgrow="NEVER"/>
+						</columnConstraints>
+						<rowConstraints>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints vgrow="NEVER"/>
+							<RowConstraints/>
+						</rowConstraints>
+
+						<Label text="Example" styleClass="heading"/>
+						<Label text="Font" GridPane.columnIndex="1" styleClass="heading"/>
+						<Label text="Size" GridPane.columnIndex="2" styleClass="heading"/>
+						<Label text="Style" GridPane.columnIndex="3" styleClass="heading"/>
+
+						<Label text="Caption" GridPane.rowIndex="1" styleClass="fluent, caption"/>
+						<Label text="Regular" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+						<Label text="12 px" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+						<Label text=".fluent.caption" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+						<Label text="Body" GridPane.rowIndex="2" styleClass="fluent, body"/>
+						<Label text="Regular" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+						<Label text="14 px" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+						<Label text=".fluent.body" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+						<Label text="Body Strong" GridPane.rowIndex="3" styleClass="fluent, body-strong"/>
+						<Label text="SemiBold" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+						<Label text="14 px" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+						<Label text=".fluent.body-strong" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+						<Label text="Subtitle" GridPane.rowIndex="4" styleClass="fluent, subtitle"/>
+						<Label text="SemiBold" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+						<Label text="20 px" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+						<Label text=".fluent.subtitle" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+
+						<Label text="Title" GridPane.rowIndex="5" styleClass="fluent, title"/>
+						<Label text="SemiBold" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+						<Label text="28 px" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+						<Label text=".fluent.title" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+
+						<Label text="Title Large" GridPane.rowIndex="6" styleClass="fluent, title-large"/>
+						<Label text="SemiBold" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+						<Label text="40 px" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+						<Label text=".fluent.title-large" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+
+						<Label text="Display" GridPane.rowIndex="7" styleClass="fluent, display"/>
+						<Label text="SemiBold" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+						<Label text="68 px" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+						<Label text=".fluent.display" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+					</GridPane>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%typography.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

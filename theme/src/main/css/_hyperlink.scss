@@ -1,0 +1,38 @@
+.hyperlink {
+	-fx-padding: 8 12 8 12;
+	-fx-cursor: hand;
+	-fx-content-display: LEFT;
+	-fx-background-radius: 5;
+	-fx-text-fill: -AccentTextFillColorPrimaryBrush;
+
+	&:hover {
+		-fx-text-fill: -AccentTextFillColorSecondaryBrush;
+		-fx-background-color: -SubtleFillColorSecondaryBrush;
+	}
+	&:armed,
+	&:hover:armed {
+		-fx-text-fill: -AccentTextFillColorTertiaryBrush;
+		-fx-background-color: -SubtleFillColorTertiaryBrush;
+	}
+	&:focus-visible {
+		-fx-border-width: 2;
+		-fx-border-color: -FocusStrokeColorOuterBrush;
+		-fx-border-style: solid;
+		-fx-border-insets: -4;
+		-fx-border-radius: 9;
+	}
+	&:disabled {
+		-fx-text-fill: -TextFillColorDisabledBrush;
+	}
+}
+
+/* Inside a TextFlow, the Hyperlink shouldn't have hover effects like a button.
+   Interestingly, a TextFlow doesn't seem to have a style class? */
+TextFlow > .hyperlink {
+	-fx-padding: 0 0 0 0;
+	-fx-background-color: transparent;
+
+	&:hover, &:armed, &:hover:armed {
+		-fx-background-color: transparent;
+	}
+}

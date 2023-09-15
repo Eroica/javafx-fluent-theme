@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import java.lang.String?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="Settings" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<VBox spacing="8.0">
+				<Label text="Appearance &amp; behavior" styleClass="fluent, body-strong"/>
+
+				<VBox spacing="4.0">
+					<HBox alignment="CENTER" styleClass="card" spacing="16.0">
+						<padding>
+							<Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+						</padding>
+
+						<Label text="&#xE790;" styleClass="icon"/>
+						<VBox HBox.hgrow="ALWAYS">
+							<Label text="App theme"/>
+							<Label text="Select which app theme to display" styleClass="fluent, caption"/>
+						</VBox>
+						<ChoiceBox disable="true" value="Light">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Light"/>
+								</FXCollections>
+							</items>
+						</ChoiceBox>
+					</HBox>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="8.0">
+				<Label text="About" styleClass="fluent, body-strong"/>
+
+				<VBox spacing="4.0" styleClass="card">
+					<HBox spacing="8.0" style="-fx-padding: 16 24 16 24;">
+						<VBox spacing="12.0" HBox.hgrow="ALWAYS">
+							<VBox>
+								<Label styleClass="fluent, body-strong">JavaFX Fluent UI Gallery</Label>
+								<Label styleClass="fluent, caption">© 2023 Eroica</Label>
+							</VBox>
+
+							<VBox spacing="8.0">
+								<Label text="This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software." wrapText="true"/>
+								<Label text="Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:" wrapText="true"/>
+								<Label text="1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required." wrapText="true"/>
+								<Label text="2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software." wrapText="true"/>
+								<Label text="3. This notice may not be removed or altered from any source distribution." wrapText="true"/>
+							</VBox>
+						</VBox>
+					</HBox>
+
+					<Separator/>
+
+					<HBox alignment="BASELINE_CENTER" spacing="8.0"  style="-fx-padding: 16 24 16 24;">
+						<Pane HBox.hgrow="ALWAYS">
+							<Label>To clone this repository</Label>
+						</Pane>
+						<TextField editable="false" prefWidth="400.0" style="-fx-background-color: transparent">https://github.com/Eroica/javafx-fluent-theme.git</TextField>
+					</HBox>
+
+					<Separator/>
+
+					<VBox spacing="8.0" style="-fx-padding: 16 24 16 24;">
+						<Label text="Dependencies &amp; references" styleClass="fluent, body-strong"/>
+
+						<TextFlow>
+							<Text>This application uses the libraries that are available under the Apache 2.0 license, which can be obtained from&#x00a0;</Text>
+							<Hyperlink text="http://www.apache.org/licenses/LICENSE-2.0"/>
+							<Text>.</Text>
+						</TextFlow>
+
+						<TextArea text="%dependencies" editable="false"/>
+					</VBox>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

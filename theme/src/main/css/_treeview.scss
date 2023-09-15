@@ -1,0 +1,31 @@
+.tree-view {
+	-fx-background-color: -fx-background;
+}
+
+.tree-cell {
+	-fx-indent: 24;
+	-fx-alignment: CENTER;
+	-fx-background-insets: 2 4 2 4, 4 6 4 6;
+	-fx-background-radius: 4 4 4 4, 4 4 4 4;
+}
+.tree-cell > .tree-disclosure-node {
+	-fx-padding: 16 8 16 8;
+}
+.tree-cell > .tree-disclosure-node > .arrow {
+	-fx-background-color: #434343;
+	-fx-shape: "M 0 0.75 L 3 3.75 L 0 6.75 L 0.75 7.5 L 4.5 3.75 L 0.75 0 Z";
+	-fx-scale-shape: false;
+}
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+	-fx-rotate: 90;
+}
+.tree-cell:filled:hover {
+	-fx-background-color: -SubtleFillColorSecondaryBrush;
+}
+.tree-cell:filled:armed,
+.tree-cell:filled:pressed {
+	-fx-background-color: -SubtleFillColorTertiaryBrush;
+}
+.tree-cell:selected {
+	-fx-background-color: -SubtleFillColorSecondaryBrush;
+}

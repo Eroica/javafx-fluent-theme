@@ -1,0 +1,24 @@
+.context-menu {
+	-fx-background-color: #f8f8f8;
+	-fx-text-fill: black;
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-border-color: #00000022;
+	-fx-border-width: 1px;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.0, 0.0, 1.0);
+	-fx-padding: 0;
+}
+.context-menu .separator:horizontal .line {
+	-fx-border-color: rgba(0, 0, 0, 0.04) transparent transparent transparent;
+	-fx-border-insets: 1 0 0 0;
+}
+/* The thing when a choice box is too large and you have to scroll */
+.context-menu > .scroll-arrow {
+	-fx-padding: 8;
+}
+.context-menu > .scroll-arrow:hover {
+	/* TODO Fix me */
+	-fx-background: -fx-selection-bar;
+	-fx-background-color: -fx-background;
+	-fx-text-fill: -fx-text-background-color;
+}

@@ -1,0 +1,42 @@
+.slider {
+	slider-track-color: #868686;
+	-fx-skin: "views.FluentSliderSkin";
+}
+.slider .thumb {
+	-fx-background-color: #e5e5e5, #ffffff, #0067c0;
+	-fx-background-radius: 11, 11, 10;
+	-fx-max-width: 22;
+	-fx-pref-width: 22;
+	-fx-max-height: 22;
+	-fx-pref-height: 22;
+}
+.slider .thumb:hover {
+	-fx-background-color: #e5e5e5, #ffffff, #1a76c6;
+}
+.slider .track {
+	-fx-background-color: #868686;
+	-fx-background-radius: 2 2 2 2;
+	-fx-padding: 2;
+}
+.slider:vertical .track {
+}
+.slider .axis {
+	-fx-tick-label-fill: #868686;
+	-fx-tick-length: 4;
+	-fx-minor-tick-length: 4;
+}
+.slider .axis-tick-mark,
+.slider .axis-minor-tick-mark {
+	-fx-stroke: #868686;
+	-fx-stroke-width: 1;
+	-fx-smooth: false;
+	-fx-stroke-type: outside;
+}
+
+.slider:focus-visible {
+	-fx-border-width: 2;
+	-fx-border-color: -FocusStrokeColorOuterBrush;
+	-fx-border-style: solid;
+	-fx-border-insets: -4;
+	-fx-border-radius: 9;
+}
