@@ -2,8 +2,10 @@ plugins {
     kotlin("jvm") version "1.9.10"
 }
 
-group = "earth.groundctrl.fluent"
-version = "2023.09"
+allprojects {
+    group = "earth.groundctrl"
+    version = "v2023.09a"
+}
 
 repositories {
     google()

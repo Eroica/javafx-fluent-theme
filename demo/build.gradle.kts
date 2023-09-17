@@ -18,7 +18,7 @@ javafx {
 }
 
 dependencies {
-    implementation(project(":theme"))
+    implementation("earth.groundctrl:javafx-fluent-theme:v2023.09a")
 }
 
 application {
