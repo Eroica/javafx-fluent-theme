@@ -4,7 +4,6 @@ import javafx.stage.Stage
 import javafx.stage.StageStyle
 
 abstract class FluentApp(
-    private val initialTitle: String,
     private val useMica: Boolean = false,
     private val useHeaderBar: Boolean = false
 ) : Application() {
@@ -25,7 +24,6 @@ abstract class FluentApp(
 
     override fun start(primaryStage: Stage) {
         primaryStage.initStyle(StageStyle.UNIFIED)
-        primaryStage.title = initialTitle
         onCreateStage(primaryStage)
         primaryStage.show()
         Windows.subclass(primaryStage.title, useMica, useHeaderBar)
