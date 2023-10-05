@@ -18,7 +18,9 @@ javafx {
 }
 
 dependencies {
+    // Replace this with the other line if you do not have Maven package installed locally
     implementation("earth.groundctrl:javafx-fluent-theme:v2023.09a")
+    // implementation(project(":theme"))
 }
 
 application {
