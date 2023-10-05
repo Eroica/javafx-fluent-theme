@@ -27,10 +27,11 @@ fun main() {
     launch(FluentDemo::class.java)
 }
 
-class FluentDemo : FluentApp("JavaFX Fluent UI Gallery", true, true) {
+class FluentDemo : FluentApp(true, true) {
     override fun onCreateStage(primaryStage: Stage) {
         primaryStage.minWidth = 800.0
         primaryStage.minHeight = 600.0
+        primaryStage.title = "JavaFX Fluent UI Gallery"
         primaryStage.scene = Scene(MainActivity(primaryStage.title, hostServices).apply {
         }, Color.TRANSPARENT).apply {
             stylesheets.add("style.css")
