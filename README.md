@@ -1,12 +1,14 @@
 # javafx-fluent-theme
 
-![](/docs/Gallery.png)
+![](/docs/Demo.png)
 
 This is a custom theme for JavaFX to make your application look like a Windows 11 (WinUI) program. It replaces `modena.css` with styles that follow Microsoft's _Fluent design_ language. In addition, you can [apply Windows 11's _Mica_ effect to your window](#enabling-windows-11s-mica-effect), or [override Windows' default window title bar](#removing-windows-default-title-bar) for complete client-side decorations.
 
 Take a look at the [example application](#demo-application), or see here [how to achieve Windows' built-in effects](#usage).
 
 See [here for the list of styled controls](#table-of-javafxwinui-controls), and to see which is still missing.
+
+![](/docs/Gallery.png)
 
 ***
 
