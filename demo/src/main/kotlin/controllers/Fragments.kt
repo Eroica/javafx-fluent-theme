@@ -3,6 +3,7 @@ package controllers
 import MainActivity
 import fragments.HeaderBarFragment
 import fragments.HomeFragment
+import fragments.ProgressBarFragment
 import fragments.SystemBackdropFragment
 import javafx.beans.NamedArg
 import javafx.fxml.FXMLLoader
@@ -35,7 +36,7 @@ enum class FragmentType(private val factory: () -> IFragment) {
     MenuBar({ BaseFragment("MenuBarFragment.fxml") }),
 
     /* Status & info */
-    ProgressBar({ BaseFragment("ProgressBarFragment.fxml") }),
+    ProgressBar({ ProgressBarFragment() }),
     Tooltip({ BaseFragment("TooltipFragment.fxml") }),
 
     /* Styles */
