@@ -37,7 +37,8 @@ runtime {
         skipInstaller = true
         imageOptions = listOf(
             "--copyright", "Copyright (c) 2023-2024 Eroica",
-            "--vendor", "GROUNDCTRL"
+            "--vendor", "GROUNDCTRL",
         )
+        appVersion = project.version.toString().drop(1)
     }
 }
