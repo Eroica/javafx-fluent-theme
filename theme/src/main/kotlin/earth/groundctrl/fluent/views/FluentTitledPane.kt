@@ -1,4 +1,4 @@
-package views
+package earth.groundctrl.fluent.views
 
 import javafx.geometry.NodeOrientation
 import javafx.geometry.Pos
@@ -10,7 +10,6 @@ import javafx.scene.layout.StackPane
 class FluentTitledPaneSkin(control: TitledPane) : TitledPaneSkin(control) {
     private val title = skinnable.lookup(".title") as Pane
     private val arrowButton = skinnable.lookup(".arrow-button") as StackPane
-//    private val text = skinnable.lookup(".text") as Node
 
     init {
         skinnable.alignment = Pos.CENTER_RIGHT

@@ -1,3 +1,5 @@
+package earth.groundctrl.fluent
+
 import earth.groundctrl.fluent.lib.Windows
 import javafx.application.Application
 import javafx.stage.Stage

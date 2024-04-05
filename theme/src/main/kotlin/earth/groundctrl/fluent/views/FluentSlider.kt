@@ -1,4 +1,4 @@
-package views
+package earth.groundctrl.fluent.views
 
 import javafx.animation.Interpolator
 import javafx.animation.KeyFrame
