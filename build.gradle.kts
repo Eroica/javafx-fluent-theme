@@ -4,7 +4,7 @@ plugins {
 
 allprojects {
     group = "earth.groundctrl"
-    version = "v2023.09a"
+    version = "v2024.04"
 }
 
 repositories {
