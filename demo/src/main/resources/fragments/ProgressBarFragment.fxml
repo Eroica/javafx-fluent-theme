@@ -37,13 +37,13 @@
 			</VBox>
 
 			<VBox spacing="12.0">
-				<Label text="An indeterminate ProgressBar." styleClass="fluent, body-strong"/>
+				<Label text="A determinate ProgressBar." styleClass="fluent, body-strong"/>
 
 				<VBox styleClass="example">
 					<VBox styleClass="example-header" spacing="8.0">
 						<HBox spacing="8.0">
-							<ProgressBar progress="0.0"/>
-							<Spinner promptText="Progress"></Spinner>
+							<ProgressBar prefWidth="200.0" fx:id="determinateProgress" progress="0.0"/>
+							<Spinner fx:id="progressSpinner" promptText="Progress" min="1.0" max="100.0"/>
 						</HBox>
 					</VBox>
 
