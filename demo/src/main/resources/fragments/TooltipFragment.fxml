@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import views.FluentTooltip?>
+<?import earth.groundctrl.fluent.views.FluentTooltip?>
 <fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
 	<HBox styleClass="content-header">
 		<Label text="Tooltip" styleClass="fluent, title"/>

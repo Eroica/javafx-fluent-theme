@@ -17,6 +17,7 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
+import earth.groundctrl.fluent.FluentApp
 import javafx.application.Application.launch
 import javafx.beans.InvalidationListener
 import javafx.scene.Scene
