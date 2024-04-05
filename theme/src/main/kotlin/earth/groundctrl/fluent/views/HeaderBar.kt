@@ -1,4 +1,4 @@
-package views
+package earth.groundctrl.fluent.views
 
 import earth.groundctrl.fluent.lib.Windows
 import javafx.beans.DefaultProperty

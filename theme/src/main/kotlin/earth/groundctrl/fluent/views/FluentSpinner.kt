@@ -1,4 +1,4 @@
-package views
+package earth.groundctrl.fluent.views
 
 import javafx.scene.control.Spinner
 import javafx.scene.control.skin.SpinnerSkin
