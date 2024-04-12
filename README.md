@@ -28,8 +28,6 @@ If you import this project as a dependency, you get access to the overridden sty
 
 The library contains an abstract `FluentApp` class that sets up the custom theme and any other effects (see below) for you. It only has a single abstract method (`onCreateStage(Stage)`) which is executed between JavaFX' `start(Stage)` and a built-in `primaryStage.show()`. This is important because overriding the windows' look can only happen after it's already visible, so use `onCreateStage` for the usual setup like setting up the root scene.
 
-An `initialTitle: String` is required for `FluentApp` to find the window and style it (if required). After that, you can change the title of your stage/window dynamically again.
-
 If you want to set up the theme manually without subclassing `FluentApp`, make sure to:
 
 * Override `modena.css` as early as possible with `setUserAgentStylesheet("fluent-light.css")`
@@ -54,20 +52,20 @@ When you see a "glitched" Mica effect, try using software rendering first by set
 
 `System.setProperty("prism.order", "sw")`
 
-If Mica works with this, there is a good chance that you only need to enable a hidden flag **on non-AMD GPUs**:
+If Mica works with this, there is a good chance that you only need to enable a hidden flag **on non-AMD GPUs**. Remove the `prism.order` flag, and run this code as early as possible:
 
 ```kotlin
 System.setProperty("prism.forceUploadingPainter", "true")
 System.setProperty("javafx.animation.fullspeed", "true") // When on monitors >60Hz
 ```
 
-If you subclass `FluentApp`, it will take care of that setting automatically using a very simple check for AMD GPUs.
+You can use `Windows.isAmdGpu()` for a simple check for AMD GPUs on the system, but this check isn't very sophisticated.
 
 ### Removing Windows' default title bar
 
 Windows' default title bar normally shows a small icon and the window title. You can remove this title bar and merge the content area with the window controls to use this "unused" space. Many macOS and GTK applications use a similar design which arguably looks a little more modern.
 
-The Win32 equivalent is called `DwmExtendFrameIntoTitleBar`. This is actually built into JavaFX, but doesn't work alone, and didn't account for some features that are lost using this (window dragging). Here's how you can set up a window like that using `javafx-fluent-theme`:
+The Win32 equivalent is called `DwmExtendFrameIntoTitleBar`. There is actually code in JavaFX that uses this, but it doesn't seem to work reliably. With `javafx-fluent-theme`, you get another direct way to achieve this Window styling. Follow this:
 
 * The Stage's window style must be `StageStyle.UNIFIED`.
 * **After** `primaryStage.show()`, call `Windows.setHeaderBarFor(String, Boolean)` providing your window's title to remove the title bar.
@@ -79,7 +77,7 @@ Combined with the Mica effect from above (which requires a transparent backgroun
 
 ![](/docs/HeaderBarMica.png)
 
-Here, the first node of my JavaFX scene is a custom `HeaderBar` node (which is actually just an HBox) which just shows a button (the back arrow).
+Here, the first node of my JavaFX scene is a custom `HeaderBar` node (sub-classing HBox) which just shows a button (the back arrow).
 
 Without a title bar, you will lose the option to drag the window around with a mouse. While it's possible to have the window draggable by using JavaFX events, this library also provides a `DragPane` which you should put somewhere in your `HeaderBar` node. The nice thing about this is that it will capture Windows' native events, and e.g. trigger Windows' snap layouts when moving the window around.
 
