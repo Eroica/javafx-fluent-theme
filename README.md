@@ -22,11 +22,35 @@ demo/       # demo application that uses the theme and DLL
 
 The theme (currently, only a light theme is available) is built by SASS with files in `theme/src/main/css`.
 
+## Setup/Installation
+
+The whole `theme` package includes CSS styling, custom skins, and a `FluentApp` abstract class that takes care of setting everything up. If you want to use the whole package, you need to build it locally, and then include it in your dependencies.
+
+Alternatively, you can just copy the CSS file into your project if you just want to change the look of the controls. However, some controls use custom skins to e.g. enable animations. See the [list of controls here](#table-of-javafxwinui-controls).
+
+If you want to use Windows' internal functions that are made available in `FluentApp`, you need to load `FluentLib.dll` in your code. `FluentApp` takes care of that, but the DLL must be available for the application, which is usually where the process is being executed; in a Gradle environment, put it where `gradlew.bat` is located.
+
+You can download a pre-built DLL from the [Releases](https://github.com/Eroica/javafx-fluent-theme/releases/tag/v2024.04).
+
 ## Usage
 
-If you import this project as a dependency, you get access to the overridden styles as well as some Win32 functions to alter the look of the application window. Alternatively, you can just copy the CSS file into your project if you just want to change the look of the controls. However, some controls use custom skins to e.g. enable animations. See the [list of controls here](#table-of-javafxwinui-controls).
+As a first step, run `FluentApp.initialize()` as soon as possible, before calling any JavaFX code. For example, in this `Main.kt` file:
 
-The library contains an abstract `FluentApp` class that sets up the custom theme and any other effects (see below) for you. It only has a single abstract method (`onCreateStage(Stage)`) which is executed between JavaFX' `start(Stage)` and a built-in `primaryStage.show()`. This is important because overriding the windows' look can only happen after it's already visible, so use `onCreateStage` for the usual setup like setting up the root scene.
+```kotlin
+fun main() {
+    FluentApp.initialize()
+    launch(YourApp::class.java)
+}
+```
+
+This takes care of loading the FluentLib DLL, and does some checks so that the Mica effect works (see [Issues](#issues)).
+
+For the `YourApp` class, subclass `FluentApp` which sets up the custom theme and any other effects (see below) for you. It only has a single abstract method (`onCreateStage(Stage)`). In general, whatever you do in `start()`, you should now do in `onCreateStage`, with some exceptions:
+
+* Don't change the Stage style using `initStyle`.
+* Don't call `primaryStage.show()`. FluentApp takes care of that.
+
+### Manual setup
 
 If you want to set up the theme manually without subclassing `FluentApp`, make sure to:
 
@@ -46,9 +70,9 @@ Windows 11's "Mica" effect can be activated with this library's `Windows.setMica
 
 #### Issues
 
-While it's generally possible to get the Mica effect without using Microsoft's blessed ways (e.g. when using WPF), it seems it is a little unreliable under JavaFX **when using certain types of GPUs**. More info is available here: [Graphic issues on certain GPUs](https://github.com/mimoguz/custom_window/issues/2)
+While it's generally possible to get the Mica effect without using Microsoft's blessed ways, it seems it is a little unreliable under JavaFX **when using certain types of GPUs**. More info is available here: [Graphic issues on certain GPUs](https://github.com/mimoguz/custom_window/issues/2)
 
-When you see a "glitched" Mica effect, try using software rendering first by setting:
+When you see a "glitched" Mica effect, try using software rendering first by setting this as early as possible (i.e. before calling JavaFX' `launch`):
 
 `System.setProperty("prism.order", "sw")`
 
@@ -59,7 +83,7 @@ System.setProperty("prism.forceUploadingPainter", "true")
 System.setProperty("javafx.animation.fullspeed", "true") // When on monitors >60Hz
 ```
 
-You can use `Windows.isAmdGpu()` for a simple check for AMD GPUs on the system, but this check isn't very sophisticated.
+`FluentApp.initialize()` takes care of that automatically, but my current check for AMD GPUs isn't very sophisticated. Feel free to raise any issues if e.g. the demo application looks "weird" on your setup (usually, a black background).
 
 ### Removing Windows' default title bar
 
@@ -79,7 +103,7 @@ Combined with the Mica effect from above (which requires a transparent backgroun
 
 Here, the first node of my JavaFX scene is a custom `HeaderBar` node (sub-classing HBox) which just shows a button (the back arrow).
 
-Without a title bar, you will lose the option to drag the window around with a mouse. While it's possible to have the window draggable by using JavaFX events, this library also provides a `DragPane` which you should put somewhere in your `HeaderBar` node. The nice thing about this is that it will capture Windows' native events, and e.g. trigger Windows' snap layouts when moving the window around.
+Without a title bar, you will lose the option to drag the window around with a mouse. Because of that, this library also provides a `DragPane` which you should put somewhere in your `HeaderBar` node. The nice thing about this is that it will capture Windows' native events, and e.g. trigger Windows' snap layouts when moving the window around.
 
 An example header bar:
 
