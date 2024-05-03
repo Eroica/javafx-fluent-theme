@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v2023.04] - 2023-04-05
+## [v2024.04] - 2024-04-05
 
 ### Removed
 
