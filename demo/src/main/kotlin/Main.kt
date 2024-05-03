@@ -25,6 +25,7 @@ import javafx.scene.paint.Color
 import javafx.stage.Stage
 
 fun main() {
+    FluentApp.initialize()
     launch(FluentDemo::class.java)
 }
 
