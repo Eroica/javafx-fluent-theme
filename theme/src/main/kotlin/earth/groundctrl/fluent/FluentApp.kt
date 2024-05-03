@@ -9,11 +9,23 @@ abstract class FluentApp(
     private val useMica: Boolean = false,
     private val useHeaderBar: Boolean = false
 ) : Application() {
+    companion object {
+        @JvmStatic
+        fun initialize(isFixMica: Boolean = true) {
+            System.loadLibrary("FluentLib")
+            System.setProperty("prism.lcdtext", "false")
+
+            if (isFixMica && !Windows.isAmdGpu()) {
+                System.setProperty("prism.forceUploadingPainter", "true")
+                System.setProperty("javafx.animation.fullspeed", "true")
+            }
+        }
+    }
+
     abstract fun onCreateStage(primaryStage: Stage)
 
     override fun init() {
         super.init()
-        System.loadLibrary("FluentLib")
         setUserAgentStylesheet("fluent-light.css")
     }
 
