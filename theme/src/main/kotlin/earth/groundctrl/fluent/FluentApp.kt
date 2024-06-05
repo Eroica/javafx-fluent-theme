@@ -5,10 +5,7 @@ import javafx.application.Application
 import javafx.stage.Stage
 import javafx.stage.StageStyle
 
-abstract class FluentApp(
-    private val useMica: Boolean = false,
-    private val useHeaderBar: Boolean = false
-) : Application() {
+abstract class FluentApp : Application() {
     companion object {
         /**
          * @since v2025.05
@@ -32,6 +29,9 @@ abstract class FluentApp(
             }
         }
     }
+
+    protected var useMica: Boolean = false
+    protected var useHeaderBar: Boolean = false
 
     abstract fun onCreateStage(primaryStage: Stage)
 
