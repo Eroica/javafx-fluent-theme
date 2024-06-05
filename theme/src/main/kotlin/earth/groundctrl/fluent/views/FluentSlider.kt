@@ -11,6 +11,7 @@ import javafx.scene.control.skin.SliderSkin
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.StackPane
 import javafx.util.Duration
+import kotlin.math.roundToInt
 
 class FluentSliderSkin(slider: Slider) : SliderSkin(slider) {
     private val thumb = skinnable.lookup(".thumb") as StackPane
@@ -26,9 +27,21 @@ class FluentSliderSkin(slider: Slider) : SliderSkin(slider) {
         /* This isn't pretty, but it works for now */
         track.styleProperty().bind(
             SimpleStringProperty("-fx-background-color: linear-gradient(to right, -fx-accent ")
-                .concat(skinnable.valueProperty().divide(skinnable.max))
+                .concat(skinnable.valueProperty().map {
+                    if (skinnable.max > 0.0) {
+                        ((skinnable.valueProperty().get() / skinnable.max) * 100).roundToInt() / 100.0
+                    } else {
+                        0.0
+                    }
+                })
                 .concat(", slider-track-color ")
-                .concat(skinnable.valueProperty().divide(skinnable.max))
+                .concat(skinnable.valueProperty().map {
+                    if (skinnable.max > 0.0) {
+                        ((skinnable.valueProperty().get() / skinnable.max) * 100).roundToInt() / 100.0
+                    } else {
+                        0.0
+                    }
+                })
                 .concat(");")
         )
 
