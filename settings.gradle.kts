@@ -1,2 +1,2 @@
 rootProject.name = "javafx-fluent-theme"
-include("theme", "demo")
+include("theme", "demo", "demo-java")
