@@ -8,7 +8,7 @@ import javafx.stage.StageStyle
 abstract class FluentApp : Application() {
     companion object {
         /**
-         * @since v2025.05
+         * @since v2024.05
          * Sets up the necessary environment to let JavaFX be themed by javafx-fluent-theme:
          * 1. Loads FluentLib.dll,
          * 2. disables sub-pixel antialiasing (in favor of grayscale),
