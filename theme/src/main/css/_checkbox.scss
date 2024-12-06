@@ -39,21 +39,20 @@
 .check-box:indeterminate .box {
 	-fx-background-color: #0067c0, #0067c0;
 }
-.check-box:selected:focused .box,
 .check-box:selected:hover .box,
 .check-box:indeterminate:hover .box {
 	-fx-background-color: #0e6ec2, #1975c5;
 }
-.check-box:selected:focused:hover .box,
-.check-box:indeterminate:focused:hover .box {
-	-fx-background-color: #6d9df77f, #0e6ec2, #1975c5;
+.check-box:selected:hover .box,
+.check-box:indeterminate:hover .box {
+	-fx-background-color: #0e6ec2, #1975c5;
 }
 .check-box:selected:pressed .box,
 .check-box:indeterminate:pressed .box {
 	-fx-background-color: #1d77c5, #3183ca;
 }
-.check-box:selected:focused:pressed .box,
-.check-box:indeterminate:focused:pressed .box {
+.check-box:selected:pressed .box,
+.check-box:indeterminate:pressed .box {
 	-fx-background-color: #1d77c5, #3183ca;
 }
 .check-box:selected:pressed .box .mark,
