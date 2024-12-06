@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.10"
+    kotlin("jvm") version "2.1.0"
 }
 
 allprojects {
@@ -14,7 +14,7 @@ repositories {
 }
 
 kotlin {
-   jvmToolchain(20)
+   jvmToolchain(22)
 }
 
 subprojects {
