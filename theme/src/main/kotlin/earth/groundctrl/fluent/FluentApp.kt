@@ -41,6 +41,12 @@ abstract class FluentApp : Application() {
 
     abstract fun onCreateStage(primaryStage: Stage)
 
+    /**
+     * @since v2024.12
+     * Callback after `Windows.subclass` has been called, can be used to further set up your app.
+     */
+    open fun onStageCreated() = Unit
+
     override fun init() {
         super.init()
         setUserAgentStylesheet("fluent-light.css")
@@ -51,5 +57,6 @@ abstract class FluentApp : Application() {
         onCreateStage(primaryStage)
         primaryStage.show()
         Windows.subclass(primaryStage.title, useMica, useHeaderBar)
+        onStageCreated()
     }
 }
