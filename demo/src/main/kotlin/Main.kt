@@ -29,7 +29,7 @@ fun main() {
     launch(FluentDemo::class.java)
 }
 
-class FluentDemo : FluentApp(true, true) {
+class FluentDemo : FluentApp() {
     override fun onCreateStage(primaryStage: Stage) {
         primaryStage.minWidth = 800.0
         primaryStage.minHeight = 600.0

@@ -8,6 +8,15 @@ import javafx.stage.StageStyle
 abstract class FluentApp : Application() {
     companion object {
         /**
+         * @since v2024.12
+         * The properties are static here to modify the `Windows.subclass` call which is done
+         * automatically in `start`. Depending on system or app settings, one might want to disable
+         * e.g. Mica.
+         */
+        var useMica: Boolean = true
+        var useHeaderBar: Boolean = true
+
+        /**
          * @since v2024.05
          * Sets up the necessary environment to let JavaFX be themed by javafx-fluent-theme:
          * 1. Loads FluentLib.dll,
@@ -29,9 +38,6 @@ abstract class FluentApp : Application() {
             }
         }
     }
-
-    protected var useMica: Boolean = false
-    protected var useHeaderBar: Boolean = false
 
     abstract fun onCreateStage(primaryStage: Stage)
 
