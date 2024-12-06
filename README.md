@@ -24,11 +24,12 @@ The theme (currently, only a light theme is available) is built by SASS with fil
 
 ## Setup/Installation
 
-The whole `theme` package includes CSS styling, custom skins, and a `FluentApp` abstract class that takes care of setting everything up. If you want to use the whole package, you need to build it locally, and then include it in your dependencies.
+The whole `theme` package includes CSS styling, custom skins, and a `FluentApp` abstract class that takes care of setting everything up.
 
-Alternatively, you can just copy the CSS file into your project if you just want to change the look of the controls. However, some controls use custom skins to e.g. enable animations. See the [list of controls here](#table-of-javafxwinui-controls).
+* If you want to use the whole package, you need to build the `theme` package locally, and then include it in your dependencies.
+* Alternatively, if you just want to change the look of some controls, you can copy the theme's CSS file into your project. However, some controls use custom skins to e.g. enable animations. See the [list of controls here](#table-of-javafxwinui-controls).
 
-If you want to use Windows' internal functions that are made available in `FluentApp`, you need to load `FluentLib.dll` in your code. `FluentApp` takes care of that, but the DLL must be available for the application, which is usually where the process is being executed; in a Gradle environment, put it where `gradlew.bat` is located.
+If you want to use Windows' internal functions, you need to load `FluentLib.dll` in your code. `FluentApp` takes care of that, but the DLL must be available to the application, which is usually where the process is being executed; in a Gradle environment, put it where your project's `build.gradle.kts` is located.
 
 You can download a pre-built DLL from the [Releases](https://github.com/Eroica/javafx-fluent-theme/releases/tag/v2024.04).
 
@@ -43,9 +44,9 @@ fun main() {
 }
 ```
 
-This takes care of loading the FluentLib DLL, and does some checks so that the Mica effect works (see [Issues](#issues)).
+This takes care of loading the FluentLib DLL, and does some checks so that Windows 11's Mica effect works (see [Issues](#issues)).
 
-For the `YourApp` class, subclass `FluentApp` which sets up the custom theme and any other effects (see below) for you. It only has a single abstract method (`onCreateStage(Stage)`). In general, whatever you do in `start()`, you should now do in `onCreateStage`, with some exceptions:
+For the `YourApp` class, subclass `FluentApp`. It  has a single abstract method `onCreateStage(Stage)`. In general, whatever you do in `start()`, you should now do in `onCreateStage`, with some exceptions:
 
 * Don't change the Stage style using `initStyle`.
 * Don't call `primaryStage.show()`. FluentApp takes care of that.
@@ -61,10 +62,10 @@ If you want to set up the theme manually without subclassing `FluentApp`, make s
 
 ### Enabling Windows 11's Mica effect
 
-Windows 11's "Mica" effect can be activated with this library's `Windows.setMicaFor(String, Boolean)` method (coming from `FluentLib.dll`). However, you need to make sure that:
+Windows 11's "Mica" effect can be activated with this library's `Windows.setMicaFor(String, Boolean)` method (after `FluentLib.dll` is loaded). However, you need to make sure that:
 
 * Your stage's style is `StageStyle.UNIFIED`
-* There is no background set wherever Mica should "shine through", e.g. any node should have `-fx-background-color: transparent`, and the `Scene` should be instantiated with `Scene(root, Color.TRANSPARENT)`
+* In your JavaFX stage, there is no background color set wherever Mica should "shine through", e.g. any node should have `-fx-background-color: transparent`, and the `Scene` should be instantiated with `Scene(root, Color.TRANSPARENT)`
 * Call `Windows.setMicaFor(String, Boolean)` providing your window title **after** the stage is `show()`n.
 * You can enable or disable the effect using the same method.
 
@@ -89,19 +90,21 @@ System.setProperty("javafx.animation.fullspeed", "true") // When on monitors >60
 
 Windows' default title bar normally shows a small icon and the window title. You can remove this title bar and merge the content area with the window controls to use this "unused" space. Many macOS and GTK applications use a similar design which arguably looks a little more modern.
 
-The Win32 equivalent is called `DwmExtendFrameIntoTitleBar`. There is actually code in JavaFX that uses this, but it doesn't seem to work reliably. With `javafx-fluent-theme`, you get another direct way to achieve this Window styling. Follow this:
+The Win32 equivalent is called `DwmExtendFrameIntoTitleBar`. (There is actually code in JavaFX that uses this, but it doesn't seem to work reliably.) With this theme, you get a more reliable way to achieve this window styling. Follow this (if you want to do it manually):
 
 * The Stage's window style must be `StageStyle.UNIFIED`.
 * **After** `primaryStage.show()`, call `Windows.setHeaderBarFor(String, Boolean)` providing your window's title to remove the title bar.
 * The effect can be toggled back and forth using the same method.
 
-Depending on your scene background, the window controls at the top right might disappear. This is because the background is painted over these controls (although Windows will still react to click events there). To see the window controls, make sure not to set any background (e.g. with CSS) or only use `transparent` where the window controls might be painted over.
+Alternatively, take a look at subclassing `FluentApp`.
+
+Depending on your scene background, the window controls at the top right might disappear. This is because the background is painted over these controls (although Windows will still react to click events there). To see window controls, make sure not to set any background or only use `transparent` where the window controls might be painted over.
 
 Combined with the Mica effect from above (which requires a transparent background), the window controls will appear again, giving you a nice, Windows 11-styled application:
 
 ![](/docs/HeaderBarMica.png)
 
-Here, the first node of my JavaFX scene is a custom `HeaderBar` node (sub-classing HBox) which just shows a button (the back arrow).
+Here, the first node of my JavaFX scene is a custom `HeaderBar` node (which is basically an HBox) which just shows a button (the back arrow).
 
 Without a title bar, you will lose the option to drag the window around with a mouse. Because of that, this library also provides a `DragPane` which you should put somewhere in your `HeaderBar` node. The nice thing about this is that it will capture Windows' native events, and e.g. trigger Windows' snap layouts when moving the window around.
 
@@ -116,8 +119,6 @@ An example header bar:
     <DragPane HBox.hgrow="ALWAYS"/>
 </HeaderBar>
 ```
-
-As with the Mica example above, you can subclass `FluentApp` instead and pass `useHeaderBar:` to its constructor to have this done at startup.
 
 ---
 
@@ -146,7 +147,7 @@ The demo application requires `FluentLib.dll` in its working directory, so eithe
 
 ## Design guidelines
 
-`javafx-fluent-theme` will set grayscale antialiasing which is the default for Window applications using UWP (in the past) or WinUI.
+`javafx-fluent-theme` will set grayscale antialiasing which is the default for Window applications using UWP or WinUI.
 
 I mostly tried to follow the designs found in Microsoft's gallery application. When I first started my designs, most of them came from "WinUI 2 Gallery" and only later "WinUI 3 Gallery" caught up with Microsoft's latest designs, so there might still be some subtle differences between Microsoft's most current styles.
 
