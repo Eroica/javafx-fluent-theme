@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 Eroica
+/* Copyright (C) 2023-2024 Eroica
  *
  * This software is provided 'as-is', without any express or implied
  * warranty.  In no event will the authors be held liable for any damages
@@ -29,6 +29,15 @@
 
 #define WINDOWS_11_22H2 22621
 
+/* DWM constants */
+int DWM_trueValue = 0x01;
+int DWM_falseValue = 0x00;
+int DWMBACKDROP_disable = 0x01;
+int DWMBACKDROP_mica = 0x02;
+int DWMBACKDROP_transient = 0x03;
+int DWMBACKDROP_tabbed = 0x04;
+
+/* Size constants in logical points, must be scaled by display scaling */
 const int WINDOW_CONTROL_PADDING = 144;
 const int HEADER_BAR_HEIGHT = 48;
 
@@ -182,14 +191,6 @@ LRESULT CALLBACK AppWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 
 	return lRet;
 }
-
-int DWM_trueValue = 0x01;
-int DWM_falseValue = 0x00;
-
-int DWMBACKDROP_disable = 0x01;
-int DWMBACKDROP_mica = 0x02;
-int DWMBACKDROP_transient = 0x03;
-int DWMBACKDROP_tabbed = 0x04;
 
 void set_mica(HWND hWnd, BOOL is_set_mica) {
 	if (is_set_mica) {
