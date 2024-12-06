@@ -215,6 +215,11 @@ void set_headerbar(HWND hWnd, BOOL is_set_headerbar) {
 }
 
 extern "C" JNIEXPORT int JNICALL
+Java_earth_groundctrl_fluent_lib_Windows_buildnumber(JNIEnv* env, jobject) {
+	return GetBuildNumber();
+}
+
+extern "C" JNIEXPORT int JNICALL
 Java_earth_groundctrl_fluent_lib_Windows_setmica(JNIEnv * env, jobject, jstring title, jboolean use_mica) {
 	const char* windowTitle = env->GetStringUTFChars(title, NULL);
 	HWND hWnd = FindWindow(NULL, windowTitle);

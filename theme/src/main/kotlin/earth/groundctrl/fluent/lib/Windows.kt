@@ -10,6 +10,7 @@ object Windows {
     private external fun setheaderbar(title: String, useHeaderBar: Boolean): Int
     private external fun setdragarea(x: Int, width: Int, scale: Double)
 
+    external fun buildnumber(): Int
     external fun subclass(title: String, useMica: Boolean, useHeaderBar: Boolean): Int
 
     fun setMicaFor(title: String, useMica: Boolean): Int {
