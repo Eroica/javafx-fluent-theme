@@ -15,12 +15,16 @@
 .check-box > .box > .mark {
 	-fx-background-color: null;
 	-fx-padding: 10;
-	-fx-shape: "M 0 5.25 L 3.75 9 L 11.25 1.5 L 10.5 0.75 L 3.75 7.5 L 0.75 4.5 Z";
+	-fx-shape: "M 0.5 4 L 0.5 9 L 10 9 L 10 8 L 1.5 8 L 1.5 4 Z";
 	-fx-scale-shape: false;
+	-fx-translate-y: -1;
+	-fx-rotate: -45deg;
 }
 .check-box:indeterminate > .box > .mark {
 	-fx-shape: "M0,0H10V2H0Z";
 	-fx-scale-shape: false;
+	-fx-translate-y: 0;
+	-fx-rotate: 0;
 }
 .check-box:focus-visible {
 	-fx-border-width: 2;
