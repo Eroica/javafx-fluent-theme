@@ -16,6 +16,7 @@
 			-fx-background-radius: 14;
 			-fx-max-width: 12;
 			-fx-max-height: 12;
+			transition: -fx-max-width 0.2s, -fx-max-height 0.2s;
 		}
 	}
 
@@ -37,10 +38,12 @@
 	&:selected:hover > .radio > .dot {
 		-fx-max-width: 14;
 		-fx-max-height: 14;
+		transition: -fx-max-width 0.2s, -fx-max-height 0.2s;
 	}
 	&:selected:armed > .radio > .dot {
 		-fx-max-width: 10;
 		-fx-max-height: 10;
+		transition: -fx-max-width 0.2s, -fx-max-height 0.2s;
 	}
 
 	/* TODO focus style */
