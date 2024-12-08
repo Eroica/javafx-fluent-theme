@@ -31,7 +31,7 @@
 					</VBox>
 
 					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
-						<TextArea text="%tooltip.sample1" editable="false" styleClass="code-sample"/>
+						<TextArea text="%progressbar.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
 			</VBox>
@@ -48,7 +48,7 @@
 					</VBox>
 
 					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
-						<TextArea text="%tooltip.sample1" editable="false" styleClass="code-sample"/>
+						<TextArea text="%progressbar.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
 			</VBox>
