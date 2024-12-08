@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="ListView" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="The ListView lets you show a collection of items in a list that scrolls vertically." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="Basic ListView with default layout" styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<StackPane styleClass="example-header" alignment="TOP_LEFT">
+						<padding>
+							<Insets left="12.0" top="12.0" right="12.0" bottom="12.0"/>
+						</padding>
+						<ListView styleClass="example-list-view-container">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Kendal Collins"/>
+									<String fx:value="Henry Ross"/>
+									<String fx:value="Vance DeLeon"/>
+									<String fx:value="Victoria Burke"/>
+									<String fx:value="Amber Rodriguez"/>
+									<String fx:value="Amari Rivera"/>
+									<String fx:value="Jessie Irwin"/>
+									<String fx:value="Quinn Campbell"/>
+									<String fx:value="Olivia Wilson"/>
+									<String fx:value="Ana Bowman"/>
+									<String fx:value="Shawn Hughes"/>
+									<String fx:value="Oscar Ward"/>
+									<String fx:value="Madison Butler"/>
+									<String fx:value="Graham Barnes"/>
+									<String fx:value="Anthony Ivanov"/>
+									<String fx:value="Michael Peltier"/>
+									<String fx:value="Morgan Connors"/>
+									<String fx:value="Andre Lawson"/>
+									<String fx:value="Preston Morales"/>
+									<String fx:value="Briana Hernandez"/>
+									<String fx:value="Nicole Wagner"/>
+									<String fx:value="Mario Rogers"/>
+									<String fx:value="Eugenia Lopez"/>
+									<String fx:value="Nathan Rigby"/>
+									<String fx:value="Ellis Turner"/>
+									<String fx:value="Miguel Reyes"/>
+									<String fx:value="Hayden Cook"/>
+								</FXCollections>
+							</items>
+						</ListView>
+					</StackPane>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%listview.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

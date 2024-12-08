@@ -1,0 +1,21 @@
+.list-view {
+	-fx-background-color: -fx-background;
+}
+
+.list-cell {
+	-fx-padding: 11 16 9 16;
+	-fx-background-insets: 2 4 2 4, 4 6 4 6;
+	-fx-background-radius: 4 4 4 4, 4 4 4 4;
+}
+.list-cell:odd {
+}
+.list-cell:filled:hover {
+	-fx-background-color: -SubtleFillColorSecondaryBrush;
+}
+.list-cell:filled:armed,
+.list-cell:filled:pressed {
+	-fx-background-color: -SubtleFillColorTertiaryBrush;
+}
+.list-cell:selected {
+	-fx-background-color: -SubtleFillColorSecondaryBrush;
+}

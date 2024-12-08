@@ -41,6 +41,8 @@
 	-fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 }
 .combo-box > .list-cell {
+	-fx-background: transparent;
+	-fx-background-color: transparent;
 	//-fx-text-fill: -TextFillColorTertiaryBrush;
 	-fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 }
