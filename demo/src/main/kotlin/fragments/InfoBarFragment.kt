@@ -57,5 +57,9 @@ class InfoBarFragment : BaseFragment("InfoBarFragment.fxml") {
         isIconVisible.selectedProperty().addListener { _, _, newValue -> infoBar.setIsIconVisible(newValue) }
         isClosable.selectedProperty().addListener { _, _, newValue -> infoBar.setIsCloseable(newValue) }
         severity.valueProperty().addListener { _, _, newValue -> infoBar.severity = newValue }
+        infoBar.setOnCloseListener {
+            isOpen.isSelected = false
+            it.consume()
+        }
     }
 }
