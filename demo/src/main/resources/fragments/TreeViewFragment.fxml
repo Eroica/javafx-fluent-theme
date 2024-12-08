@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="TreeView" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A simple TreeView without drag and drop support (yet)." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<StackPane styleClass="example-header" alignment="TOP_LEFT">
+						<padding>
+							<Insets left="12.0" top="12.0" right="12.0" bottom="12.0" />
+						</padding>
+						<TreeView styleClass="example-tree-view-container" showRoot="false">
+							<TreeItem>
+								<children>
+									<TreeItem value="Work Documents">
+										<children>
+											<TreeItem value="XYZ Functional Spec" />
+											<TreeItem value="Feature Schedule" />
+											<TreeItem value="Overall Project Plan" />
+											<TreeItem value="Feature Resources Allocation" />
+										</children>
+									</TreeItem>
+									<TreeItem value="Personal Documents">
+										<children>
+											<TreeItem value="Home Remodel">
+												<children>
+													<TreeItem value="Contractor Contact Info" />
+													<TreeItem value="Paint Color Scheme" />
+													<TreeItem value="Flooring woodgrain type" />
+													<TreeItem value="Kitchen cabinet style" />
+												</children>
+											</TreeItem>
+										</children>
+									</TreeItem>
+								</children>
+							</TreeItem>
+						</TreeView>
+					</StackPane>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%treeview.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

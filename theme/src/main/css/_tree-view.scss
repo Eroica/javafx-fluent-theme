@@ -3,13 +3,13 @@
 }
 
 .tree-cell {
-	-fx-indent: 24;
-	-fx-alignment: CENTER;
+	-fx-indent: 1em;
+	-fx-padding: 5 0 7 0;
 	-fx-background-insets: 2 4 2 4, 4 6 4 6;
 	-fx-background-radius: 4 4 4 4, 4 4 4 4;
 }
 .tree-cell > .tree-disclosure-node {
-	-fx-padding: 16 8 16 8;
+	-fx-padding: 10 22 10 22;
 }
 .tree-cell > .tree-disclosure-node > .arrow {
 	-fx-background-color: #434343;

@@ -111,14 +111,18 @@
 							</children>
 						</TreeItem>
 
-						<!-- TODO Collections -->
-<!--						<TreeItem>-->
-<!--							<value>-->
-<!--								<SidebarItem label="Collections" glyph="&#xE80A;"/>-->
-<!--							</value>-->
-<!--							<children>-->
-<!--							</children>-->
-<!--						</TreeItem>-->
+						<TreeItem>
+							<value>
+								<SidebarItem label="Collections" glyph="&#xE80A;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="TreeView" fragment="TreeView"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
 
 						<TreeItem>
 							<value>

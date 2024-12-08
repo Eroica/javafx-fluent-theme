@@ -97,7 +97,11 @@
 
 	-fx-pressed-base: -ControlFillColorTertiaryBrush;
 
-	-fx-text-background-color: -fx-dark-text-color;
+	-fx-text-background-color: ladder(
+			-fx-background,
+			-fx-light-text-color 45%,
+			-fx-dark-text-color  46%,
+	);
 
 	-fx-box-border: -ControlElevationBorderBrush;
 

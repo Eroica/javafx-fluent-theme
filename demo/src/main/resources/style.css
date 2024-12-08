@@ -57,7 +57,7 @@
 	-fx-background-color: rgba(0, 0, 0, .05);
 }
 .sidebar .tree-disclosure-node {
-	-fx-padding: 20 16 20 16;
+	-fx-padding: 14 22 14 22;
 }
 .sidebar .tree-cell:collapsed .tree-disclosure-node > .arrow {
 	-fx-rotate: 90;
@@ -159,4 +159,11 @@
 	-fx-padding: 12;
 	-fx-spacing: 12;
 	-fx-pref-width: 360;
+}
+
+.example-tree-view-container {
+	-fx-max-width: 320;
+	-fx-border-color: -ControlElevationBorderBrush -ControlElevationBorderBrush -ControlStrongStrokeColorDefaultBrush -ControlElevationBorderBrush;
+	-fx-border-width: 1;
+	-fx-border-style: solid;
 }
