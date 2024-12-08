@@ -3,6 +3,7 @@ package controllers
 import MainActivity
 import fragments.HeaderBarFragment
 import fragments.HomeFragment
+import fragments.InfoBarFragment
 import fragments.ProgressBarFragment
 import fragments.SystemBackdropFragment
 import javafx.beans.NamedArg
@@ -36,6 +37,7 @@ enum class FragmentType(private val factory: () -> IFragment) {
     MenuBar({ BaseFragment("MenuBarFragment.fxml") }),
 
     /* Status & info */
+    InfoBar({ InfoBarFragment() }),
     ProgressBar({ ProgressBarFragment() }),
     Tooltip({ BaseFragment("TooltipFragment.fxml") }),
 

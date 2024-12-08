@@ -3,7 +3,7 @@
 .toggle-button {
 	-fx-background-color: #cccccc, #e5e5e5, #fbfbfb;
 	-fx-background-insets: 0, 0 0 1 0, 1;
-	-fx-background-radius: 5px, 5px, 4px;
+	-fx-background-radius: 5, 5, 4;
 	-fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 	-fx-text-fill: -fx-text-base-color;
 	-fx-alignment: CENTER;
@@ -32,7 +32,10 @@
 		-fx-background-color: transparent, transparent, transparent;
 
 		&:hover {
-			-fx-background-color: #eaeaea;
+			-fx-background-color: -SubtleFillColorSecondaryBrush, -SubtleFillColorSecondaryBrush, -SubtleFillColorSecondaryBrush;
+		}
+		&:armed {
+			-fx-background-color: -SubtleFillColorTertiaryBrush, -SubtleFillColorTertiaryBrush, -SubtleFillColorTertiaryBrush;
 		}
 	}
 }
@@ -69,7 +72,7 @@
 }
 
 /* This is a special case when an icon is used as the "graphic" of a Button. The icon is inside
-   a Text node which doesn't have a ".text" class though; this makes it possible to tell it apart
+   a Text node which doesn't have a ".text" class though; this makes it impossible to tell it apart
    from the button's label (which is a LabeledText with a ".text" class). */
 .button.icon-button > Text {
 	-fx-font-family: "Segoe Fluent Icons";

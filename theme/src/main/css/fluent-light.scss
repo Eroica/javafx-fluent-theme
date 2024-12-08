@@ -67,6 +67,25 @@
 	-FocusStrokeColorOuterBrush: #1a1a1a;
 	-FocusStrokeColorInnerBrush: #fbfbfb;
 
+	/* WinUI 3 Gallery Color - Signal */
+	-SystemFillColorSuccessBrush: #0f7b0f;
+	-SystemFillColorSuccessBackgroundBrush: #dff6dd;
+	-SystemFillColorCautionBrush: #9d5d00;
+	-SystemFillColorCautionBackgroundBrush: #fff4ce;
+	-SystemFillColorCriticalBrush: #c42b1c;
+	-SystemFillColorCriticalBackgroundBrush: #fde7e9;
+	-SystemFillColorAttentionBrush: #0078d4;
+	-SystemFillColorAttentionBackgroundBrush: #f4f4f4;
+	-SystemFillColorNeutralBrush: #868686;
+	-SystemFillColorNeutralBackgroundBrush: #ededed;
+	-SystemFillColorSolidNeutralBrush: #8a8a8a;
+	-SystemFillColorSolidNeutralBackgroundBrush: #f3f3f3;
+	-SystemFillColorSolidAttentionBackgroundBrush: #f7f7f7;
+
+	/* WinUI 3 Gallery Geometry */
+	-OverlayCornerRadius: 8;
+	-ControlCornerRadius: 4;
+
 	-fx-base: #f9f9f9;
 	-fx-background: #f3f3f3;
 
@@ -139,6 +158,8 @@
 
 	-fx-mark-highlight-color: -ControlStrongStrokeColorDefaultBrush;
 
+	/* Background for items in list like things such as menus, lists, trees,
+	 * and tables. */
 	-fx-selection-bar: -fx-accent;
 
 	// TODO
@@ -175,16 +196,13 @@
 	);
 	-fx-focused-mark-color : -fx-focused-text-base-color;
 
+	/* Set the default background color for the scene */
 	-fx-background-color: -fx-background;
 }
 
 /* Make popups transparent */
 .root.popup {
 	-fx-background-color: transparent;
-}
-
-.root {
-	-fx-font-size: 14px;
 }
 
 .scroll-pane,
@@ -212,9 +230,20 @@
 	-fx-opacity: 0.4;
 }
 
+/* Prevent opacity being applied twice for JDK-8152392 */
+.text-input:disabled > .scroll-pane {
+	-fx-opacity: 1.0;
+}
+
+/* End of initial Modena overrides */
+
 /* Don't apply disabled twice in Spinner's TextInput */
 .spinner:disabled > .text-input {
 	-fx-opacity: 1.0;
+}
+
+.root {
+	-fx-font-size: 14px;
 }
 
 @import "buttons";
@@ -235,6 +264,8 @@
 @import "tooltip";
 @import "date-picker";
 @import "spinner";
+
+@import "info-bar";
 
 /* Extra classes for styling text */
 @import "typography";

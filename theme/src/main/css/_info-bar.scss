@@ -1,0 +1,56 @@
+.info-bar {
+	-fx-padding: 4 12 4 16;
+	-fx-background-color: -ControlElevationBorderBrush, -SystemFillColorAttentionBackgroundBrush;
+	-fx-background-radius: 5, 4;
+	-fx-background-insets: 0, 1;
+	-fx-spacing: 14;
+	-fx-alignment: BASELINE_LEFT;
+
+	> .icon {
+		-fx-font-family: "Segoe Fluent Icons";
+		-fx-font-size: 17;
+		-fx-translate-y: 4;
+		-fx-min-width: 18;
+		-fx-pref-width: 18;
+		-fx-max-width: 18;
+	}
+
+	> .message-container {
+		-fx-padding: 12 12 12 0;
+	}
+
+	> .close-button {
+		-fx-font-family: "Segoe Fluent Icons";
+		-fx-padding: 11;
+		-fx-min-width: 36;
+		-fx-pref-width: 36;
+		-fx-max-width: 36;
+	}
+
+	&.informational {
+		> .info-bar-icon {
+			-fx-text-fill: -SystemFillColorAttentionBrush;
+		}
+	}
+	&.success {
+		-fx-background-color: -ControlElevationBorderBrush, -SystemFillColorSuccessBackgroundBrush;
+
+		> .info-bar-icon {
+			-fx-text-fill: -SystemFillColorSuccessBrush;
+		}
+	}
+	&.warning {
+		-fx-background-color: -ControlElevationBorderBrush, -SystemFillColorCautionBackgroundBrush;
+
+		> .info-bar-icon {
+			-fx-text-fill: -SystemFillColorCautionBrush;
+		}
+	}
+	&.error {
+		-fx-background-color: -ControlElevationBorderBrush, -SystemFillColorCriticalBackgroundBrush;
+
+		> .info-bar-icon {
+			-fx-text-fill: -SystemFillColorCriticalBrush;
+		}
+	}
+}

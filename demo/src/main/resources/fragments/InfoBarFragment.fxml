@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import earth.groundctrl.fluent.views.InfoBar?>
+<?import earth.groundctrl.fluent.views.InfoBar.Severity?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="InfoBar" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<VBox spacing="8.0">
+				<Label text="Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow." wrapText="true"/>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="A closeable InfoBar with options to change its Severity" styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0" fillHeight="false">
+						<StackPane HBox.hgrow="ALWAYS">
+							<InfoBar fx:id="infoBar" title="Title" message="Essential app message for your users to be informed of, acknowledge, or take action on." />
+						</StackPane>
+
+						<VBox spacing="4.0">
+							<CheckBox fx:id="isOpen" text="Is open" selected="true"/>
+							<CheckBox fx:id="isIconVisible" text="Is icon visible" selected="true"/>
+							<CheckBox fx:id="isClosable" text="Is closable" selected="true"/>
+							<Label text="Severity"/>
+							<ComboBox fx:id="severity" converter="$controller.converter">
+								<value>
+									<InfoBar.Severity fx:value="INFORMATIONAL"/>
+								</value>
+								<items>
+									<FXCollections fx:factory="observableArrayList">
+										<InfoBar.Severity fx:value="INFORMATIONAL"/>
+										<InfoBar.Severity fx:value="SUCCESS"/>
+										<InfoBar.Severity fx:value="WARNING"/>
+										<InfoBar.Severity fx:value="ERROR"/>
+									</FXCollections>
+								</items>
+							</ComboBox>
+						</VBox>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%infobar.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

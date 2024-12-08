@@ -203,16 +203,16 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 
 <sup>‡</sup>The control can be styled only with CSS, but you instantiate `Fluent[Name]` if you want to have "fluent animations".
 
-Additionally, the following containers/panes are available or currently in preparation:
+Additionally, the following container styles are available or currently in preparation:
 
-| JavaFX     | WinUI         | Status  | CSS only? |
-|------------|---------------|---------|-----------|
-| Dialog     | ContentDialog | Missing | -         |
-| SplitPane  | SplitView     | Missing | -         |
-| TabPane    | TabView       | Missing | -         |
-| TitledPane | Expander      | Done    | YES       |
-| ToolBar    | CommandBar    | Missing | -         |
-
+| JavaFX    | WinUI         | Status  | CSS only? |
+|-----------|---------------|---------|-----------|
+| Dialog    | ContentDialog | Missing | -         |
+| SplitPane | SplitView     | Missing | -         |
+| TabPane   | TabView       | Missing | -         |
+| Expander  | Expander      | WIP     | -         |
+| ToolBar   | CommandBar    | Missing | -         |
+| InfoBar   | InfoBar       | Done    | NO        |
 
 ## Gallery
 

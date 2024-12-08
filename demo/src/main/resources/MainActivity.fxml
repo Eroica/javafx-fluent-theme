@@ -182,7 +182,11 @@
 								<SidebarItem label="Status &amp; info" glyph="&#xE8F2;"/>
 							</value>
 							<children>
-								<!-- TODO InfoBar -->
+								<TreeItem>
+									<value>
+										<SidebarItem label="InfoBar" fragment="InfoBar"/>
+									</value>
+								</TreeItem>
 								<TreeItem>
 									<value>
 										<SidebarItem label="ProgressBar" fragment="ProgressBar"/>
