@@ -76,7 +76,7 @@
 
 						<TextFlow>
 							<Text>This application uses the libraries that are available under the Apache 2.0 license, which can be obtained from&#x00a0;</Text>
-							<Hyperlink text="http://www.apache.org/licenses/LICENSE-2.0"/>
+							<Hyperlink text="https://www.apache.org/licenses/LICENSE-2.0" onAction="#onHyperlinkClick"/>
 							<Text>.</Text>
 						</TextFlow>
 

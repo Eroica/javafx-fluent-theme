@@ -7,7 +7,10 @@ import fragments.InfoBarFragment
 import fragments.ProgressBarFragment
 import fragments.SystemBackdropFragment
 import javafx.beans.NamedArg
+import javafx.event.ActionEvent
+import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
+import javafx.scene.control.Hyperlink
 import javafx.scene.layout.Pane
 import javafx.scene.layout.VBox
 import java.util.*
@@ -81,4 +84,10 @@ open class BaseFragment(@NamedArg("resourceId") private val resourceId: String) 
 
     override val view: Pane
         get() = this
+
+    @FXML
+    private fun onHyperlinkClick(event: ActionEvent) {
+        activity.openLink((event.source as Hyperlink).text)
+        event.consume()
+    }
 }
