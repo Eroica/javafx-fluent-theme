@@ -20,7 +20,7 @@ javafx {
 dependencies {
     implementation(project(":theme"))
     // Replace the line above with this line when using a local package
-    // implementation("earth.groundctrl:javafx-fluent-theme:v2024.04")
+    // implementation("earth.groundctrl:javafx-fluent-theme:v2024.12a")
 }
 
 application {
@@ -29,6 +29,11 @@ application {
 
 runtime {
     options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
+    modules = listOf(
+        "java.scripting",
+        "java.xml",
+        "jdk.unsupported"
+    )
     launcher {
         noConsole = true
     }
@@ -39,6 +44,6 @@ runtime {
             "--copyright", "Copyright (c) 2023-2024 Eroica",
             "--vendor", "GROUNDCTRL",
         )
-        appVersion = project.version.toString().drop(1)
+        appVersion = "2024.12"
     }
 }
