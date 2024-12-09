@@ -29,6 +29,7 @@ enum class FragmentType(private val factory: () -> IFragment) {
     /* Collections */
     ListView({ BaseFragment("ListViewFragment.fxml") }),
     TreeView({ BaseFragment("TreeViewFragment.fxml") }),
+    TableView({ BaseFragment("TableViewFragment.fxml") }),
 
     /* Date & time */
     DatePicker({ BaseFragment("DatePickerFragment.fxml") }),

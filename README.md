@@ -190,7 +190,7 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 | Slider            | Slider                         | Done    | NO         |
 | Spinner           | NumberBox                      | Done    | NO         |
 | SplitMenuButton   | SplitButton                    | Missing | -          |
-| TableView         | DataGrid                       | Missing | -          |
+| TableView         | DataGrid/DataTable             | WIP     | YES        |
 | TextArea          | TextBox                        | Done    | YES        |
 | TextField         | TextBox                        | Done    | YES        |
 | ToggleButton      | ToggleButton                   | Done    | YES        |

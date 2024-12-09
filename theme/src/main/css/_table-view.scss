@@ -1,0 +1,167 @@
+.table-view,
+.tree-table-view {
+	-fx-table-header-border-color: -fx-box-border;
+	-fx-table-cell-border-color: #ebebeb;
+	-fx-background-color: #f9f9f9;
+}
+
+.table-row-cell {
+	-fx-background: -fx-control-inner-background;
+	-fx-background-color: -fx-table-cell-border-color, -fx-background;
+	-fx-background-insets: 1 0 0 0, 1 0 0 0;
+	-fx-padding: 0;
+	-fx-text-fill: -fx-text-background-color;
+}
+.table-view.striped .table-row-cell:odd {
+	-fx-background: -fx-control-inner-background-alt;
+}
+
+.table-cell {
+	-fx-padding: .25em 0.583333em .25em 0.583333em;
+	-fx-border-color: transparent -fx-table-cell-border-color transparent transparent;
+	-fx-cell-size: 2.0em; /* 24 */
+	-fx-text-fill: -fx-text-background-color;
+}
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell .tree-table-cell:selected {
+	-fx-background-color: -fx-table-cell-border-color, -fx-background;
+	-fx-background-insets: 0, 0 0 1 0;
+}
+
+.table-view:constrained-resize > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell:last-visible,
+.tree-table-view:constrained-resize > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .tree-table-cell:last-visible {
+	-fx-border-color: transparent;
+}
+
+.table-view .column-resize-line,
+.tree-table-view .column-resize-line {
+	-fx-background: -fx-accent;
+	-fx-background-color: -fx-background;
+	-fx-padding: 0.0em 0.0416667em 0.0em 0.0416667em; /* 0 0.571429 0 0.571429 */
+}
+
+.table-view .column-header-background,
+.tree-table-view > .column-header-background {
+	-fx-background-color: -fx-inner-border, -fx-body-color;
+	-fx-background-insets: 0, 1;
+}
+
+.table-view .column-header,
+.tree-table-view .column-header,
+.table-view .filler,
+.tree-table-view .filler,
+.table-view > .column-header-background > .show-hide-columns-button,
+.tree-table-view > .column-header-background > .show-hide-columns-button,
+.table-view:constrained-resize .filler,
+.tree-table-view:constrained-resize .filler {
+	-fx-background-color: -fx-box-border, #ffffff, #ffffff;
+	-fx-background-insets: 0, 0 1 1 0, 1 2 2 1;
+	-fx-text-fill: -fx-selection-bar-text;
+	-fx-padding: 8px;
+	-fx-font-size: 12px;
+}
+.table-view .column-header .context-menu,
+.tree-table-view .column-header .context-menu,
+.table-view > .column-header-background > .show-hide-columns-button .context-menu,
+.tree-table-view > .column-header-background > .show-hide-columns-button .context-menu {
+	-fx-font-weight: null;
+}
+.table-view .filler,
+.tree-table-view .filler,
+.table-view:constrained-resize .filler,
+.tree-table-view:constrained-resize .filler {
+	-fx-background-insets: 0, 0 0 1 0, 1 1 2 1;
+}
+.table-view > .column-header-background > .show-hide-columns-button,
+.tree-table-view > .column-header-background > .show-hide-columns-button {
+	-fx-background-insets: 0, 0 0 1 1, 1 1 2 2;
+}
+.table-view .column-header .sort-order-dots-container,
+.tree-table-view .column-header .sort-order-dots-container{
+	-fx-padding: 2 0 2 0;
+}
+.table-view .column-header .sort-order,
+.tree-table-view .column-header .sort-order{
+	-fx-font-size: 0.916667em; /* 11pt - 1 less than the default font */
+}
+.table-view .column-header .sort-order-dot,
+.tree-table-view .column-header .sort-order-dot {
+	-fx-background-color: -fx-mark-color;
+	-fx-padding: 0.115em;
+	-fx-background-radius: 0.115em;
+}
+.table-view .column-header .label,
+.tree-table-view .column-header .label {
+	-fx-padding: 10px 12px 10px 12px;
+	-fx-text-fill: #7b7b7b;
+}
+
+.table-view .show-hide-column-image,
+.tree-table-view .show-hide-column-image {
+	-fx-background-color: -fx-mark-color;
+	-fx-padding: 0.25em; /* 3px */
+	-fx-shape: "M398.902,298.045c0.667,0,1.333,0,2,0c0,0.667,0,1.333,0,2c0.667,0,1.333,0,2,0c0,0.667,0,1.333,0,2c-0.667,0-1.333,0-2,0c0,0.666,0,1.332,0,1.999c-0.667,0-1.333,0-2,0c0-0.667,0-1.333,0-1.999c-0.666,0-1.333,0-1.999,0c0-0.667,0-1.334,0-2c0.666,0,1.333,0,1.999,0C398.902,299.378,398.902,298.711,398.902,298.045z";
+}
+
+.table-view .column-drag-header,
+.tree-table-view .column-drag-header {
+	-fx-background: -fx-accent;
+	-fx-background-color: -fx-selection-bar;
+	-fx-border-color: transparent;
+	-fx-opacity: 0.6;
+}
+
+.table-view .column-overlay,
+.tree-table-view .column-overlay {
+	-fx-background-color: darkgray;
+	-fx-opacity: 0.3;
+}
+
+.table-view .arrow,
+.tree-table-view .arrow {
+	-fx-background-color: -fx-mark-color;
+	-fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+	-fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.table-view .empty-table,
+.tree-table-view .empty-table {
+	-fx-background-color: white;
+	-fx-font-size: 1.166667em; /* 14pt - 2 more than the default font */
+}
+
+.check-box-table-cell {
+	-fx-alignment: center;
+	-fx-padding: 0;
+}
+.check-box-table-cell > .check-box {
+}
+.check-box-table-cell > .check-box > .box {
+}
+.check-box-table-cell > .check-box:focused > .box {
+}
+.check-box-table-cell > .check-box:selected > .box > .mark {
+}
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled > .check-box-table-cell:selected > .check-box > .box,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled > .check-box-table-cell:selected > .check-box > .box,
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected > .check-box-table-cell > .check-box > .box,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected > .check-box-table-cell > .check-box > .box {
+	-fx-background-color: derive(-fx-accent,40%), -fx-background;
+}
+
+/* From "List, Tree, Table COMMON" */
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected,
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected {
+	-fx-background: -fx-selection-bar;
+	-fx-table-cell-border-color: derive(-fx-selection-bar, 20%);
+}
+.table-row-cell:filled:selected,
+.table-row-cell:filled > .table-cell:selected {
+	-fx-background: -fx-selection-bar-non-focused;
+	-fx-table-cell-border-color: derive(-fx-selection-bar-non-focused, 20%);
+}
+.table-view:focused:row-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell:focused,
+.table-view:focused:cell-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell:focused {
+	-fx-background-color: -fx-background, -fx-cell-focus-inner-border, -fx-background;
+	-fx-background-insets: 0, 1, 2;
+}

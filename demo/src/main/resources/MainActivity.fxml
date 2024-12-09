@@ -126,6 +126,11 @@
 										<SidebarItem label="TreeView" fragment="TreeView"/>
 									</value>
 								</TreeItem>
+								<TreeItem>
+									<value>
+										<SidebarItem label="TableView" fragment="TableView"/>
+									</value>
+								</TreeItem>
 							</children>
 						</TreeItem>
 
