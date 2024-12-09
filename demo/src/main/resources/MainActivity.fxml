@@ -118,6 +118,11 @@
 							<children>
 								<TreeItem>
 									<value>
+										<SidebarItem label="ListView" fragment="ListView"/>
+									</value>
+								</TreeItem>
+								<TreeItem>
+									<value>
 										<SidebarItem label="TreeView" fragment="TreeView"/>
 									</value>
 								</TreeItem>
