@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.Dialog?>
+<?import javafx.scene.control.DialogPane?>
+<Dialog xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1">
+	<dialogPane>
+		<DialogPane headerText="Save your work?">
+			<contentText>Lorem ipsum dolor sit amet, adipisicing elit.</contentText>
+			<buttonTypes>
+				<ButtonType fx:constant="CANCEL"/>
+				<ButtonType text="Don’t save" buttonData="NO"/>
+				<ButtonType text="Save" buttonData="OK_DONE"/>
+			</buttonTypes>
+		</DialogPane>
+	</dialogPane>
+</Dialog>

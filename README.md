@@ -207,7 +207,7 @@ Additionally, the following container styles are available or currently in prepa
 
 | JavaFX    | WinUI         | Status  | CSS only? |
 |-----------|---------------|---------|-----------|
-| Dialog    | ContentDialog | Missing | -         |
+| Dialog    | ContentDialog | WIP     | YES       |
 | SplitPane | SplitView     | Missing | -         |
 | TabPane   | TabView       | Missing | -         |
 | Expander  | Expander      | WIP     | -         |

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+<Stage xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+	<scene>
+		<Scene>
+			<VBox maxWidth="500.0" styleClass="fluent-dialog">
+				<children>
+					<Label styleClass="header-text" text="Save your work?" wrapText="true"/>
+
+					<VBox styleClass="content-container" spacing="4.0">
+						<Label text="Lorem ipsum dolor sit amet, adipisicing elit."/>
+						<CheckBox text="Upload your content to the cloud."/>
+					</VBox>
+
+					<HBox styleClass="button-bar-container" spacing="8.0" alignment="BASELINE_RIGHT">
+						<Button prefWidth="90.0" text="Cancel"/>
+						<Button prefWidth="90.0" text="Don’t save"/>
+						<Button prefWidth="90.0" styleClass="button, accent-button" text="Save"/>
+					</HBox>
+				</children>
+			</VBox>
+		</Scene>
+	</scene>
+</Stage>

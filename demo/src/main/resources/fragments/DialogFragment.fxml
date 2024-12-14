@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="Dialog" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="Use a Dialog to show relevant information or to provide a modal dialog experience that can show any FXML content. (Note that javafx-fluent-theme provides dialog styling, but controlling a Dialog requires a little more setup. As an example, look into the source code of the demo app.)" wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="A basic Dialog with content." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0" alignment="BASELINE_LEFT">
+						<Button text="Show dialog" onAction="#onOpenClick"/>
+						<Label text="Result: "/>
+						<Label text="${controller.dialogResult}"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%dialog.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="A more complicated dialog with full content." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<HBox styleClass="example-header" spacing="8.0">
+						<Button text="Show dialog" onAction="#onOpenFullClick"/>
+					</HBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%dialog.sample2" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>

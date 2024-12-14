@@ -147,14 +147,18 @@
 							</children>
 						</TreeItem>
 
-						<!-- TODO Dialogs & flyouts -->
-<!--						<TreeItem>-->
-<!--							<value>-->
-<!--								<SidebarItem label="Dialogs &amp; flyouts" glyph="&#xE15F;"/>-->
-<!--							</value>-->
-<!--							<children>-->
-<!--							</children>-->
-<!--						</TreeItem>-->
+						<TreeItem>
+							<value>
+								<SidebarItem label="Dialogs &amp; flyouts" glyph="&#xE15F;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Dialog" fragment="Dialog"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
 
 						<!-- TODO Layout -->
 <!--						<TreeItem>-->

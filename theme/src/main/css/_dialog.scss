@@ -1,0 +1,47 @@
+.dialog-pane,
+.fluent-dialog {
+	-fx-background-color: #ffffff;
+	-fx-border-width: 1 0 0 0;
+	-fx-border-color: -ControlElevationBorderBrush;
+	-fx-border-style: solid;
+}
+
+.dialog-pane > .expandable-content {
+	-fx-padding: 8 16 8 16
+}
+
+.dialog-pane > .button-bar > .container,
+.fluent-dialog > .button-bar-container {
+	-fx-padding: 12;
+	-fx-background-color: -ControlElevationBorderBrush, #f3f3f3;
+	-fx-background-insets: 0, 1 0 0 0;
+}
+
+.dialog-pane > .content.label {
+	-fx-alignment: top-left;
+	-fx-padding: 8 16 16 16;
+}
+.fluent-dialog > .content-container {
+	-fx-padding: 8px 16px 16px 16px;
+}
+
+.header-panel .text,
+.fluent-dialog > .header-text {
+	-fx-font-size: 18;
+}
+.dialog-pane:header .header-panel .label,
+.fluent-dialog > .header-text {
+	-fx-font-family: "Segoe UI Semibold";
+	-fx-wrap-text: true;
+	-fx-padding: 8 16 0 16;
+}
+
+/* Not officially in WinUI, but doesn't hurt to add Modena's defaults */
+.dialog-pane > .button-bar > .container > .details-button {
+	-fx-alignment: baseline-left;
+	-fx-focus-traversable: false;
+	-fx-padding: 0.416em; /* 5px */
+}
+.dialog-pane > .button-bar > .container > .details-button:hover {
+	-fx-underline: true;
+}

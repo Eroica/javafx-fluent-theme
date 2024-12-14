@@ -34,7 +34,7 @@ class FluentDemo : FluentApp() {
         primaryStage.minWidth = 800.0
         primaryStage.minHeight = 600.0
         primaryStage.title = "JavaFX Fluent UI Gallery"
-        primaryStage.scene = Scene(MainActivity(primaryStage.title, hostServices).apply {
+        primaryStage.scene = Scene(MainActivity(primaryStage, hostServices).apply {
         }, Color.TRANSPARENT).apply {
             stylesheets.add("style.css")
         }

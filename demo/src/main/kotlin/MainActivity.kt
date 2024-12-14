@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.control.TreeView
 import javafx.scene.layout.StackPane
 import javafx.scene.layout.VBox
+import javafx.stage.Stage
 import views.ISidebarItem
 import views.SidebarItem
 
@@ -19,7 +20,7 @@ sealed interface IViewEvent {
 }
 
 class MainActivity(
-    val windowTitle: String,
+    val window: Stage,
     private val hostServices: HostServices
 ) : VBox() {
     @FXML
@@ -70,11 +71,11 @@ class MainActivity(
     }
 
     fun toggleMica() {
-        Windows.setMicaFor(windowTitle, !getIsMicaEffect().also { isMicaEffect.set(!it) })
+        Windows.setMicaFor(window.title, !getIsMicaEffect().also { isMicaEffect.set(!it) })
     }
 
     fun toggleHeaderBar() {
-        Windows.setHeaderBarFor(windowTitle, !getIsHeaderBar().also { isHeaderBar.set(!it) })
+        Windows.setHeaderBarFor(window.title, !getIsHeaderBar().also { isHeaderBar.set(!it) })
     }
 
     fun openLink(uri: String) {

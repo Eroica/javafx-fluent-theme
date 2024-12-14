@@ -1,6 +1,7 @@
 package controllers
 
 import MainActivity
+import fragments.DialogFragment
 import fragments.HeaderBarFragment
 import fragments.HomeFragment
 import fragments.InfoBarFragment
@@ -39,6 +40,9 @@ enum class FragmentType(private val factory: () -> IFragment) {
 
     /* Menus & toolbars */
     MenuBar({ BaseFragment("MenuBarFragment.fxml") }),
+
+    /* Dialogs & flyouts */
+    Dialog({ DialogFragment() }),
 
     /* Status & info */
     InfoBar({ InfoBarFragment() }),
