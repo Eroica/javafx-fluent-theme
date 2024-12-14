@@ -23,7 +23,7 @@
 					</VBox>
 
 					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
-						<TextArea text="%tooltip.sample1" editable="false" styleClass="code-sample"/>
+						<TextArea text="%datepicker.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
 			</VBox>
