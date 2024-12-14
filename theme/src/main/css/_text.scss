@@ -13,11 +13,11 @@
 .text-input {
 	-fx-text-fill: -fx-text-inner-color;
 	-fx-highlight-fill: -fx-accent;
-	-fx-highlight-text-fill: blue;
+	-fx-highlight-text-fill: -TextOnAccentFillColorSelectedTextBrush;
 	-fx-prompt-text-fill: -TextFillColorSecondaryBrush;
 	-fx-background-color: #868686, #e5e5e5, #fbfbfb;
 	-fx-background-insets: 0, 0 0 1 0, 1;
-	-fx-background-radius: 5px, 5px, 4px;
+	-fx-background-radius: 5, 5, 4;
 	-fx-cursor: text;
 	-fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
 
@@ -25,8 +25,6 @@
 		-fx-background-color: #868686, #e5e5e5, #f6f6f6;
 	}
 	&:focused {
-		-fx-highlight-fill: -fx-accent;
-		-fx-highlight-text-fill: -TextOnAccentFillColorSelectedTextBrush;
 		-fx-background-color: -fx-accent, #e5e5e5, #fbfbfb;
 		-fx-background-insets: 0, 0 0 2 0, 1 1 2 1;
 		-fx-prompt-text-fill: -TextFillColorTertiaryBrush;

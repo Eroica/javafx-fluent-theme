@@ -17,8 +17,8 @@
 				<VBox styleClass="example">
 					<VBox styleClass="example-header" spacing="8.0">
 						<HBox spacing="4.0">
-							<Spinner min="1" max="10"/>
-							<Spinner  disable="true"/>
+							<Spinner min="1" max="10" editable="true"/>
+							<Spinner disable="true"/>
 						</HBox>
 					</VBox>
 
