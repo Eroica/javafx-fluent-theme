@@ -182,14 +182,18 @@
 							</children>
 						</TreeItem>
 
-						<!-- TODO Scrolling -->
-<!--						<TreeItem>-->
-<!--							<value>-->
-<!--								<SidebarItem label="Scrolling" glyph="&#xE174;"/>-->
-<!--							</value>-->
-<!--							<children>-->
-<!--							</children>-->
-<!--						</TreeItem>-->
+						<TreeItem>
+							<value>
+								<SidebarItem label="Scrolling" glyph="&#xE174;"/>
+							</value>
+							<children>
+								<TreeItem>
+									<value>
+										<SidebarItem label="Scrolling" fragment="ScrollView"/>
+									</value>
+								</TreeItem>
+							</children>
+						</TreeItem>
 
 						<TreeItem>
 							<value>

@@ -44,6 +44,9 @@ enum class FragmentType(private val factory: () -> IFragment) {
     /* Dialogs & flyouts */
     Dialog({ DialogFragment() }),
 
+    /* Scrolling */
+    ScrollView({ BaseFragment("ScrollViewFragment.fxml") }),
+
     /* Status & info */
     InfoBar({ InfoBarFragment() }),
     ProgressBar({ ProgressBarFragment() }),

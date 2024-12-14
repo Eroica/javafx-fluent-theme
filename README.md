@@ -205,14 +205,15 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 
 Additionally, the following container styles are available or currently in preparation:
 
-| JavaFX    | WinUI         | Status  | CSS only? |
-|-----------|---------------|---------|-----------|
-| Dialog    | ContentDialog | WIP     | YES       |
-| SplitPane | SplitView     | Missing | -         |
-| TabPane   | TabView       | Missing | -         |
-| Expander  | Expander      | WIP     | -         |
-| ToolBar   | CommandBar    | Missing | -         |
-| InfoBar   | InfoBar       | Done    | NO        |
+| JavaFX     | WinUI         | Status  | CSS only? |
+|------------|---------------|---------|-----------|
+| Dialog     | ContentDialog | WIP     | YES       |
+| SplitPane  | SplitView     | Missing | -         |
+| TabPane    | TabView       | Missing | -         |
+| Expander   | Expander      | WIP     | -         |
+| ScrollPane | ScrollView    | WIP     | -         |
+| ToolBar    | CommandBar    | Missing | -         |
+| InfoBar    | InfoBar       | Done    | NO        |
 
 ## Gallery
 
