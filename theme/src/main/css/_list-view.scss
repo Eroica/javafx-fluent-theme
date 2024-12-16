@@ -19,3 +19,23 @@
 .list-cell:selected {
 	-fx-background-color: -SubtleFillColorSecondaryBrush;
 }
+
+.fluent-list-view {
+	.list-cell .indicator {
+		-fx-opacity: 0.0;
+		-fx-background-color: -AccentFillColorDefaultBrush;
+		-fx-background-radius: 2;
+		-fx-pref-width: 3;
+		-fx-pref-height: 10;
+		-fx-translate-x: -12;
+		transition: -fx-pref-height 0.2s;
+	}
+	.list-cell:pressed .indicator {
+		-fx-opacity: 0.0;
+	}
+	.list-cell:selected .indicator {
+		-fx-opacity: 1.0;
+		-fx-pref-height: 16;
+		transition: -fx-pref-height 0.2s;
+	}
+}

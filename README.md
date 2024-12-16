@@ -176,7 +176,7 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 | Hyperlink         | HyperlinkButton                | Done    | YES        |
 | ImageView         | Image                          | Done    | YES        |
 | Label             | TextBlock                      | Done    | YES        |
-| ListView          | ListView                       | Missing | -          |
+| ListView          | ListView                       | Done    | NO‡        |
 | MediaView         | MediaPlayerElement             | Skipped | -          |
 | MenuBar           | MenuBar                        | WIP     | YES        |
 | MenuButon         | DropDownButton                 | Done    | YES        |
@@ -195,7 +195,7 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 | TextField         | TextBox                        | Done    | YES        |
 | ToggleButton      | ToggleButton                   | Done    | YES        |
 | Tooltip           | ToolTip                        | Done    | NO‡        |
-| TreeTableView     | DataGrid (I think)             | Skipped | -          |
+| TreeTableView     | DataGrid (I think)             | Skipped | YES        |
 | TreeView          | TreeView                       | WIP     | -          |
 | WebView           | WebView2                       | Skipped | -          |
 
