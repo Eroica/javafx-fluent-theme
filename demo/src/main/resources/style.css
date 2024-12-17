@@ -106,11 +106,11 @@
 }
 
 .code-sample {
-	-fx-padding: 8;
 	-fx-background-color: transparent, transparent;
 }
-.code-sample .content {
+.code-sample .scroll-pane .content {
 	-fx-background-color: #f4f4f4;
+	-fx-padding: 8;
 }
 
 .type-ramp .label.heading {
