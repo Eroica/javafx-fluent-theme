@@ -1,6 +1,7 @@
 package controllers
 
 import MainActivity
+import fragments.ComboBoxFragment
 import fragments.DialogFragment
 import fragments.HeaderBarFragment
 import fragments.HomeFragment
@@ -26,7 +27,7 @@ enum class FragmentType(private val factory: () -> IFragment) {
     Hyperlink({ BaseFragment("HyperlinkFragment.fxml") }),
     ToggleButton({ BaseFragment("ToggleButtonFragment.fxml") }),
     CheckBox({ BaseFragment("CheckBoxFragment.fxml") }),
-    ComboBox({ BaseFragment("ComboBoxFragment.fxml") }),
+    ComboBox({ ComboBoxFragment() }),
     RadioButton({ BaseFragment("RadioButtonFragment.fxml") }),
     Slider({ BaseFragment("SliderFragment.fxml") }),
 

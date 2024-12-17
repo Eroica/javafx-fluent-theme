@@ -169,7 +169,7 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 | CheckBox          | CheckBox                       | Done    | YES        |
 | ChoiceBox         | ComboBox                       | Done    | YES        |
 | ColorPicker       | ColorPicker                    | Missing | -          |
-| ComboBox          | ComboBox                       | Done    | YES        |
+| ComboBox          | ComboBox                       | Done    | NO‡        |
 | ContextMenu       | (several)                      | Done    | NO‡        |
 | DatePicker        | CalendarDatePicker, DatePicker | Done    | YES        |
 | HTMLEditor        | -                              | Skipped | -          |
@@ -201,7 +201,7 @@ In my own designs, I try not to use any title case when labelling buttons or oth
 
 <sup>†</sup>This means that no custom `Skin` is used to add any custom behavior. You could simply copy-paste the CSS attributes to get the design.
 
-<sup>‡</sup>The control can be styled only with CSS, but you instantiate `Fluent[Name]` if you want to have "fluent animations".
+<sup>‡</sup>The control can be styled with CSS only, but in addition, you can instantiate `Fluent[Name]` to have "fluent animations".
 
 Additionally, the following container styles are available or currently in preparation:
 

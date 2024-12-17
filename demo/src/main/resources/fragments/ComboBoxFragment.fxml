@@ -4,6 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import java.lang.*?>
+<?import javafx.scene.text.Font?>
+<?import earth.groundctrl.fluent.views.FluentComboBox?>
 <fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
 	<HBox styleClass="content-header">
 		<Label text="ComboBox" styleClass="fluent, title"/>
@@ -14,13 +16,13 @@
 			<Label text="Use a ComboBox when you need to conserve on-screen space and when users select only one option at a time. A ComboBox shows only the currently selected item." wrapText="true"/>
 
 			<VBox spacing="12.0">
-				<Label text="A ComboBox with items defined inline." styleClass="fluent, body-strong"/>
+				<Label text="A ComboBox with items defined inline and its width set. Use FluentComboBox to get fluent animations." wrapText="true" styleClass="fluent, body-strong"/>
 
 				<VBox styleClass="example">
 					<VBox styleClass="example-header" spacing="8.0">
 						<Label text="Colors"/>
 
-						<ComboBox promptText="Pick a color">
+						<ComboBox promptText="Pick a color" prefWidth="200.0">
 							<items>
 								<FXCollections fx:factory="observableArrayList">
 									<String fx:value="Blue"/>
@@ -30,6 +32,31 @@
 								</FXCollections>
 							</items>
 						</ComboBox>
+
+						<FluentComboBox promptText="Pick a color" prefWidth="200.0">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Blue"/>
+									<String fx:value="Green"/>
+									<String fx:value="Red"/>
+									<String fx:value="Yellow"/>
+								</FXCollections>
+							</items>
+						</FluentComboBox>
+					</VBox>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%combobox.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+
+			<VBox spacing="12.0">
+				<Label text="JavaFX also provides a ChoiceBox control. It doesn’t support a custom CellFactory, and is styled similar to RadioMenuItems (viz. MenuBar)." wrapText="true" styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<VBox styleClass="example-header" spacing="8.0">
+						<Label text="Colors"/>
 
 						<ChoiceBox value="Red">
 							<items>
@@ -44,18 +71,18 @@
 					</VBox>
 
 					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
-						<TextArea text="%combobox.sample1" editable="false" styleClass="code-sample"/>
+						<TextArea text="%combobox.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
 			</VBox>
 
 			<VBox spacing="12.0">
-				<Label text="An editable ComboBox." styleClass="fluent, body-strong"/>
+				<Label text="An editable ComboBox." wrapText="true" styleClass="fluent, body-strong"/>
 
 				<VBox styleClass="example">
 					<VBox styleClass="example-header" spacing="8.0">
 						<Label text="Font size"/>
-						<ComboBox promptText="Pick a color" editable="true">
+						<ComboBox fx:id="fontSize" editable="true" value="10">
 							<items>
 								<FXCollections fx:factory="observableArrayList">
 									<String fx:value="8"/>
@@ -75,10 +102,11 @@
 								</FXCollections>
 							</items>
 						</ComboBox>
+						<Label fx:id="fontSizeLabel" text="You can set the font size used for this text."/>
 					</VBox>
 
 					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
-						<TextArea text="%combobox.sample2" editable="false" styleClass="code-sample"/>
+						<TextArea text="%combobox.sample3" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
 			</VBox>
