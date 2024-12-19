@@ -23,6 +23,18 @@ dependencies {
     // implementation("earth.groundctrl:javafx-fluent-theme:v2024.12a")
 }
 
+tasks {
+    jpackage {
+        finalizedBy("copyDlls")
+    }
+}
+
+tasks.register<Copy>("copyDlls") {
+    from(".")
+    include("*.dll")
+    into(file(layout.buildDirectory.dir("jpackage/JavaFX Fluent UI Gallery")))
+}
+
 application {
     mainClass.set("MainKt")
 }
