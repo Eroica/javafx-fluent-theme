@@ -26,7 +26,13 @@ object Windows {
     }
 
     fun isAmdGpu(): Boolean {
-        val process = Runtime.getRuntime().exec(arrayOf("wmic", "PATH", "Win32_videocontroller", "GET", "description"))
+        val process = Runtime.getRuntime().exec(
+            arrayOf(
+                "powershell",
+                "-command",
+                """"(Get-WmiObject -class Win32_VideoController -Property Description).Description""""
+            )
+        )
         val output = BufferedReader(InputStreamReader(process.inputStream)).use { it.readText() }
         return "AMD" in output.uppercase()
     }
