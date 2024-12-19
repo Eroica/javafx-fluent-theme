@@ -25,7 +25,9 @@ import javafx.scene.paint.Color
 import javafx.stage.Stage
 
 fun main() {
-    FluentApp.initialize()
+    FluentApp.initialize(false)
+    System.setProperty("prism.forceUploadingPainter", "true")
+    System.setProperty("javafx.animation.fullspeed", "true")
     launch(FluentDemo::class.java)
 }
 
