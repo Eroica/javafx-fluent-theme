@@ -20,7 +20,7 @@ javafx {
 dependencies {
     implementation(project(":theme"))
     // Replace the line above with this line when using a local package
-    // implementation("earth.groundctrl:javafx-fluent-theme:v2024.12a")
+    // implementation("earth.groundctrl:javafx-fluent-theme:v2024.12b")
 }
 
 tasks {
