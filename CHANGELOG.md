@@ -4,19 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [v2024.12a] - 2024-12-09 (WIP)
+## [v2024.12b] - 2024-12-20 (WIP)
 
 ### Added
 
 - Added `buildnumber` to Windows API functions
 - Added `onStageCreated` callback for `FluentApp`. Use this for anything that should run after FluentApp's built-in `stage.show()` call.
-- Added fluent styling for TreeView, ListView, and TableView
+- Added fluent styling for `TreeView`, `ListView`, and `TableView`
+  - Added optional `FluentListView` styling with fluent animations
 - Added a custom control for WinUI's InfoBar: `InfoBar`
+- Added fluent styling for `Dialog`
+- Fixed some style issues for `Spinner`
+- Updated `ComboBox`/`ChoiceBox` sample
+  - Added optional `FluentComboBox` styling with fluent animations
 
 ### Changed
 
 - Changed the `FluentApp` constructor to zero arguments. Initial Mica and HeaderBar flags are set via static fields.
 - Updated and built with JDK 22, JavaFX 23
+- GPU check doesn't use `wmic` anymore (because it's been deprecated?)
 
 ### Removed
 
@@ -28,6 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Fixed hover styling of CheckBox (if it was also focused)
 - Updated styling of RadioButtons (WinUI's have a darker background)
 - Fixed several code examples in the demo application
+- Fixed bug in GPU check that prevented the demo from starting
 
 ## [v2024.05] - 2024-04-05
 
