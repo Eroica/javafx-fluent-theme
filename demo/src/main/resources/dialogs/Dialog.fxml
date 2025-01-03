@@ -3,7 +3,7 @@
 <?import javafx.scene.control.ButtonType?>
 <?import javafx.scene.control.Dialog?>
 <?import javafx.scene.control.DialogPane?>
-<Dialog xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1">
+<Dialog xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml">
 	<dialogPane>
 		<DialogPane headerText="Save your work?">
 			<contentText>Lorem ipsum dolor sit amet, adipisicing elit.</contentText>

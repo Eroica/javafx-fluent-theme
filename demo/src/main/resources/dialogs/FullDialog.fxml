@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.Scene?>
 <?import javafx.stage.Stage?>
-<Stage xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<Stage xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml">
 	<scene>
 		<Scene>
 			<VBox maxWidth="500.0" styleClass="fluent-dialog">

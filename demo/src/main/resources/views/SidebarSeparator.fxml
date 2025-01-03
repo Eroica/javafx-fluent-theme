@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Separator?>
-<Separator xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" styleClass="sidebar-separator" orientation="HORIZONTAL">
+<Separator xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml" styleClass="sidebar-separator" orientation="HORIZONTAL">
 </Separator>
