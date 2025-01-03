@@ -2,8 +2,7 @@ plugins {
     application
     id("org.openjfx.javafxplugin") version "0.1.0"
     id("com.jaredsburrows.license") version "0.9.3"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("org.beryx.runtime") version "1.12.7"
+    id("org.beryx.jlink") version "3.1.1"
 }
 
 repositories {
@@ -36,26 +35,29 @@ tasks.register<Copy>("copyDlls") {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainModule.set("earth.groundctrl.fluent.demo")
+    mainClass.set("earth.groundctrl.fluent.demo.MainKt")
 }
 
-runtime {
-    options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
-    modules = listOf(
-        "java.scripting",
-        "java.xml",
-        "jdk.unsupported"
-    )
+jlink {
+    options.set(listOf(
+        "--strip-debug",
+        "--strip-native-commands",
+        "--compress", "zip-9",
+        "--no-header-files",
+        "--no-man-pages"
+    ))
+    version = "2025.01"
     launcher {
         noConsole = true
     }
     jpackage {
         imageName = "JavaFX Fluent UI Gallery"
         skipInstaller = true
+        appVersion = "2025.01"
         imageOptions = listOf(
             "--copyright", "Copyright (c) 2023-2025 Eroica",
             "--vendor", "GROUNDCTRL",
         )
-        appVersion = "2024.12"
     }
 }

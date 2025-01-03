@@ -47,7 +47,7 @@
 }
 .sidebar .tree-cell {
 	-fx-content-display: graphic-only;
-	-fx-skin: "views.SidebarCellSkin";
+	-fx-skin: "earth.groundctrl.fluent.demo.views.SidebarCellSkin";
 }
 .sidebar .tree-cell:filled:hover,
 .sidebar .tree-cell:selected {
@@ -124,7 +124,7 @@
 .home-fragment {
 	-fx-padding: 68 36 12 36;
 	-fx-min-height: 600;
-	-fx-background-image: url("/GalleryHeaderImage.png");
+	-fx-background-image: url("/earth/groundctrl/fluent/demo/GalleryHeaderImage.png");
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: 0 0;
 	-fx-background-size: cover;

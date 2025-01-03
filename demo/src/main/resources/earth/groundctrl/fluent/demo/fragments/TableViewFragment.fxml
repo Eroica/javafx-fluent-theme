@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import earth.groundctrl.fluent.demo.fragments.Weapon?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="32.0">
+	<HBox styleClass="content-header">
+		<Label text="TableView" styleClass="fluent, title"/>
+	</HBox>
+
+	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+			<Label text="Note that WinUI table layouts are spun off into a DataGrid (previously) or DataTable (modern?) control. In javafx-fluent-theme, JavaFX’ TableView is loosely based on these designs." wrapText="true"/>
+
+			<VBox spacing="12.0">
+				<Label text="Basic TableView with striped columns." styleClass="fluent, body-strong"/>
+
+				<VBox styleClass="example">
+					<StackPane styleClass="example-header" alignment="TOP_LEFT">
+						<padding>
+							<Insets left="12.0" top="12.0" right="12.0" bottom="12.0"/>
+						</padding>
+						<TableView styleClass="striped">
+							<columns>
+								<TableColumn text="ID">
+									<cellValueFactory><PropertyValueFactory property="id" /></cellValueFactory>
+								</TableColumn>
+								<TableColumn text="Name">
+									<cellValueFactory><PropertyValueFactory property="name" /></cellValueFactory>
+								</TableColumn>
+								<TableColumn text="Description">
+									<cellValueFactory><PropertyValueFactory property="description" /></cellValueFactory>
+								</TableColumn>
+								<TableColumn text="Quantity">
+									<cellValueFactory><PropertyValueFactory property="quantity" /></cellValueFactory>
+								</TableColumn>
+							</columns>
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<Weapon id="1002" name="Hydra" description="Multiple Launch Rocket System-2 Hydra" quantity="1"/>
+									<Weapon id="3456" name="MA40 AR" description="Regular assault rifle - updated version of MA5B or MA37 AR" quantity="4"/>
+									<Weapon id="5698" name="Needler" description="Alien weapon well-known for its iconic design with pink crystals" quantity="2"/>
+									<Weapon id="7043" name="Ravager" description="An incendiary plasma launcher" quantity="1"/>
+								</FXCollections>
+							</items>
+						</TableView>
+					</StackPane>
+
+					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+						<TextArea text="%tableview.sample1" editable="false" styleClass="code-sample"/>
+					</TitledPane>
+				</VBox>
+			</VBox>
+		</VBox>
+	</ScrollPane>
+</fx:root>
