@@ -53,7 +53,7 @@ runtime {
         imageName = "JavaFX Fluent UI Gallery"
         skipInstaller = true
         imageOptions = listOf(
-            "--copyright", "Copyright (c) 2023-2024 Eroica",
+            "--copyright", "Copyright (c) 2023-2025 Eroica",
             "--vendor", "GROUNDCTRL",
         )
         appVersion = "2024.12"

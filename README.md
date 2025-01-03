@@ -228,7 +228,7 @@ Here are my JavaFX applications that I styled with this theme:
 This project is published under the zlib license (see `LICENSE` file in this repository).
 
 ```
-Copyright (C) 2023-2024 Eroica
+Copyright (C) 2023-2025 Eroica
 
 This software is provided 'as-is', without any express or implied
 warranty. In no event will the authors be held liable for any damages

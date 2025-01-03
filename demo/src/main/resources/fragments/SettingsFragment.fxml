@@ -47,7 +47,7 @@
 						<VBox spacing="12.0" HBox.hgrow="ALWAYS">
 							<VBox>
 								<Label styleClass="fluent, body-strong">JavaFX Fluent UI Gallery</Label>
-								<Label styleClass="fluent, caption">© 2023–2024 Eroica</Label>
+								<Label styleClass="fluent, caption">© 2023–2025 Eroica</Label>
 							</VBox>
 
 							<VBox spacing="8.0">
