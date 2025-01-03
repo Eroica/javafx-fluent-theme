@@ -15,17 +15,17 @@
 	-fx-highlight-fill: -fx-accent;
 	-fx-highlight-text-fill: -TextOnAccentFillColorSelectedTextBrush;
 	-fx-prompt-text-fill: -TextFillColorSecondaryBrush;
-	-fx-background-color: #868686, #e5e5e5, #fbfbfb;
+	-fx-background-color: -ControlStrongStrokeColorDefaultBrush, -TextControlElevationBorderBrush, -ControlFillColorDefaultBrush;
 	-fx-background-insets: 0, 0 0 1 0, 1;
 	-fx-background-radius: 5, 5, 4;
 	-fx-cursor: text;
 	-fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
 
 	&:hover {
-		-fx-background-color: #868686, #e5e5e5, #f6f6f6;
+		-fx-background-color: -ControlStrongStrokeColorDefaultBrush, -TextControlElevationBorderBrush, -ControlFillColorSecondaryBrush;
 	}
 	&:focused {
-		-fx-background-color: -fx-accent, #e5e5e5, #fbfbfb;
+		-fx-background-color: -fx-accent, -TextControlElevationBorderBrush, -ControlFillColorInputActiveBrush;
 		-fx-background-insets: 0, 0 0 2 0, 1 1 2 1;
 		-fx-prompt-text-fill: -TextFillColorTertiaryBrush;
 	}
@@ -34,29 +34,35 @@
 .text-area {
 	-fx-padding: 1;
 	-fx-cursor: default;
-}
-.text-area > .scroll-pane {
-	-fx-background-color: null;
-	-fx-background-radius: 4;
-	-fx-background-insets: 0 0 1 0;
-}
-.text-area > .scroll-pane > .scroll-bar:horizontal {
-	-fx-background-radius: 0 0 0 2;
-}
-.text-area > .scroll-pane > .scroll-bar:vertical {
-	-fx-background-radius: 0 2 0 0;
-}
-.text-area > .scroll-pane > .corner {
-	-fx-background-radius: 0 0 2 0;
-}
-// TODO
-.text-area .content {
-	/*the is 1px less top and bottom than TextInput because of scrollpane border */
-	-fx-padding: 0.25em 0.583em 0.25em 0.583em; /* 3 7 3 7 */
-	-fx-cursor: text;
-	-fx-background-color: null;
-	-fx-background-radius: 4;
-	-fx-background-insets: 0 0 1 0;
+
+	> .scroll-pane {
+		-fx-background-color: -ControlFillColorDefaultBrush;
+		-fx-background-radius: 4;
+
+		> .scroll-bar:horizontal {
+			-fx-background-radius: 0 0 0 2;
+		}
+		> .scroll-bar:vertical {
+			-fx-background-radius: 0 2 0 0;
+		}
+		> .corner {
+			-fx-background-radius: 0 0 2 0;
+		}
+	}
+
+	.content {
+		-fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
+		-fx-cursor: text;
+		-fx-background-radius: 4 0 0 4;
+	}
+
+	&:hover > .scroll-pane {
+		-fx-background-color: -ControlFillColorSecondaryBrush;
+	}
+	&:focused > .scroll-pane {
+		-fx-background-color: -ControlFillColorInputActiveBrush;
+		-fx-background-insets: 0 0 1 0;
+	}
 }
 
 /**
