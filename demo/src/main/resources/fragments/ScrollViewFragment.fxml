@@ -10,7 +10,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="A ScrollView lets a user scroll, pan, and zoom (not yet!) to see the content that’s larger than the viewable area." wrapText="true"/>
 
 			<VBox spacing="12.0">

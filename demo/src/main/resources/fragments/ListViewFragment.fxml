@@ -12,7 +12,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="The ListView lets you show a collection of items in a list that scrolls vertically." wrapText="true"/>
 
 			<VBox spacing="12.0">

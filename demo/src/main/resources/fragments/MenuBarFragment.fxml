@@ -9,7 +9,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="The MenuBar simplifies the creation of basic applications by providing a set of menus at the top of the app or window." wrapText="true"/>
 
 			<VBox spacing="12.0">

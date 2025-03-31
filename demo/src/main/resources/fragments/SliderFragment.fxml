@@ -8,7 +8,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="Use a Slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings)." wrapText="true"/>
 
 			<VBox spacing="12.0">

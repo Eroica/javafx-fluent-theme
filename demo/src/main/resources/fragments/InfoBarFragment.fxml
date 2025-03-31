@@ -11,7 +11,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<VBox spacing="8.0">
 				<Label text="Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow." wrapText="true"/>
 			</VBox>

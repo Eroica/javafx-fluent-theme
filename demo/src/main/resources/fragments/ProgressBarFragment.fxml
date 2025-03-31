@@ -8,7 +8,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<VBox spacing="8.0">
 				<Label text="The ProgressBar has two different visual representations:" wrapText="true"/>
 				<HBox spacing="2.0">

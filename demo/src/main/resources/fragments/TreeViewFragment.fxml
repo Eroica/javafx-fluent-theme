@@ -9,7 +9,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items." wrapText="true"/>
 
 			<VBox spacing="12.0">

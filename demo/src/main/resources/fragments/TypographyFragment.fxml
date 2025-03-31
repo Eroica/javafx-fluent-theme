@@ -8,7 +8,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<VBox spacing="8.0">
 				<Label text="WinUI applications use Segoe UI at 14px as their GUI font. Smaller and larger labels are arranged according to the following type ramp. It’s a good idea to use pre-defined sizes to achieve a consistent look. You can use these style classes that javafx-fluent-theme provides to style your labels similar to WinUI applications." wrapText="true"/>
 

@@ -13,7 +13,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<VBox spacing="8.0">
 				<Label text="Appearance &amp; behavior" styleClass="fluent, body-strong"/>
 
@@ -24,10 +24,12 @@
 						</padding>
 
 						<Label text="&#xE790;" styleClass="icon"/>
+
 						<VBox HBox.hgrow="ALWAYS">
 							<Label text="App theme"/>
 							<Label text="Select which app theme to display" styleClass="fluent, caption"/>
 						</VBox>
+
 						<ChoiceBox disable="true" value="Light">
 							<items>
 								<FXCollections fx:factory="observableArrayList">
@@ -43,7 +45,7 @@
 				<Label text="About" styleClass="fluent, body-strong"/>
 
 				<VBox spacing="4.0" styleClass="card">
-					<HBox spacing="8.0" style="-fx-padding: 16 24 16 24;">
+					<HBox spacing="8.0" styleClass="card-row">
 						<VBox spacing="12.0" HBox.hgrow="ALWAYS">
 							<VBox>
 								<Label styleClass="fluent, body-strong">JavaFX Fluent UI Gallery</Label>
@@ -62,7 +64,7 @@
 
 					<Separator/>
 
-					<HBox alignment="BASELINE_CENTER" spacing="8.0"  style="-fx-padding: 16 24 16 24;">
+					<HBox alignment="BASELINE_CENTER" spacing="8.0" styleClass="card-row">
 						<Pane HBox.hgrow="ALWAYS">
 							<Label>To clone this repository</Label>
 						</Pane>
@@ -71,7 +73,7 @@
 
 					<Separator/>
 
-					<VBox spacing="8.0" style="-fx-padding: 16 24 16 24;">
+					<VBox spacing="8.0" styleClass="card-row">
 						<Label text="Dependencies &amp; references" styleClass="fluent, body-strong"/>
 
 						<TextFlow>

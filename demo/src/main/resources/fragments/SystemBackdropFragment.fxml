@@ -8,7 +8,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="System backdrops are used to provide a different background for a Window other than the default white or black (depending on Light or Dark theme). Mica and Desktop Acrylic are the current supported backdrops. There are two options for applying a backdrop: first, to use built-in Mica/Acrylic types, which have no customization and are simple to apply. The second is to create a customizable backdrop, which requires more code." wrapText="true"/>
 
 			<VBox spacing="12.0">

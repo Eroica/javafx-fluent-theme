@@ -8,7 +8,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="Use a TextArea to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextArea is for, and you can customize it in other ways." wrapText="true"/>
 
 			<VBox spacing="12.0">

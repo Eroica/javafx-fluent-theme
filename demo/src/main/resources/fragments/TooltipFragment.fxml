@@ -9,7 +9,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="A Tooltip shows more information about a UI element. You might show information about what the element does, or what the user should do. The Tooltip is shown when a user hovers over the UI element." wrapText="true"/>
 
 			<VBox spacing="12.0">

@@ -8,7 +8,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="Use a Dialog to show relevant information or to provide a modal dialog experience that can show any FXML content. (Note that javafx-fluent-theme provides dialog styling, but controlling a Dialog requires a little more setup. As an example, look into the source code of the demo app.)" wrapText="true"/>
 
 			<VBox spacing="12.0">

@@ -12,7 +12,7 @@
 	</HBox>
 
 	<ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-		<VBox spacing="32.0" style="-fx-padding: 16 16 16 36;">
+		<VBox spacing="32.0" styleClass="examples-page">
 			<Label text="Note that WinUI table layouts are spun off into a DataGrid (previously) or DataTable (modern?) control. In javafx-fluent-theme, JavaFX’ TableView is loosely based on these designs." wrapText="true"/>
 
 			<VBox spacing="12.0">
