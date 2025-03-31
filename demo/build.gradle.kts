@@ -12,8 +12,12 @@ repositories {
     mavenCentral()
 }
 
+kotlin {
+    jvmToolchain(22)
+}
+
 javafx {
-    version = "23"
+    version = "24"
     modules("javafx.controls", "javafx.fxml")
 }
 
