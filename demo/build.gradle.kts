@@ -19,7 +19,7 @@ javafx {
 dependencies {
     implementation(project(":theme"))
     // Replace the line above with this line when using a local package
-    // implementation("earth.groundctrl:javafx-fluent-theme:v2024.12b")
+    // implementation("earth.groundctrl:javafx-fluent-theme:v2025.05")
 }
 
 tasks {
@@ -55,6 +55,6 @@ runtime {
             "--copyright", "Copyright (c) 2023-2025 Eroica",
             "--vendor", "GROUNDCTRL",
         )
-        appVersion = "2024.12"
+        appVersion = "2025.05"
     }
 }
