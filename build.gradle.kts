@@ -14,7 +14,7 @@ repositories {
 }
 
 kotlin {
-   jvmToolchain(22)
+   jvmToolchain(23)
 }
 
 subprojects {

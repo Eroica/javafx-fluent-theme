@@ -2,18 +2,13 @@ plugins {
     application
     id("org.openjfx.javafxplugin") version "0.1.0"
     id("com.jaredsburrows.license") version "0.9.3"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("org.beryx.runtime") version "1.12.7"
+    id("com.dua3.gradle.runtime") version "1.13.1-patch-1"
 }
 
 repositories {
     google()
     mavenLocal()
     mavenCentral()
-}
-
-kotlin {
-    jvmToolchain(22)
 }
 
 javafx {
@@ -44,7 +39,7 @@ application {
 }
 
 runtime {
-    options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
+    options.set(listOf("--strip-debug", "--compress", "zip-9", "--no-header-files", "--no-man-pages"))
     modules = listOf(
         "java.scripting",
         "java.xml",
