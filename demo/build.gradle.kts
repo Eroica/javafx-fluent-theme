@@ -1,8 +1,8 @@
 plugins {
     application
     id("org.openjfx.javafxplugin") version "0.1.0"
-    id("com.jaredsburrows.license") version "0.9.3"
-    id("com.dua3.gradle.runtime") version "1.13.1-patch-1"
+    id("com.jaredsburrows.license") version "0.9.91"
+    id("org.beryx.runtime") version "2.0.1"
 }
 
 repositories {
@@ -12,7 +12,7 @@ repositories {
 }
 
 javafx {
-    version = "24"
+    version = "26"
     modules("javafx.controls", "javafx.fxml")
 }
 
@@ -36,6 +36,7 @@ tasks.register<Copy>("copyDlls") {
 
 application {
     mainClass.set("MainKt")
+    applicationDefaultJvmArgs = listOf("--enable-native-access=javafx.graphics", "--enable-native-access=ALL-UNNAMED")
 }
 
 runtime {
@@ -56,5 +57,6 @@ runtime {
             "--vendor", "GROUNDCTRL",
         )
         appVersion = "2025.05"
+        options.addAll("--enable-native-access=javafx.graphics", "--enable-native-access=earth.groundctrl.fluent")
     }
 }
