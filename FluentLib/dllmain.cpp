@@ -20,7 +20,7 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
 
-#include <string>
+#include <cstdlib>
 
 #include <dwmapi.h>
 #include <jni.h>
@@ -48,7 +48,7 @@ double display_scale = 1.0;
 WNDPROC wpOrigWndProc;
 
 int GetBuildNumber() {
-	std::string value;
+	char value[32];
 	DWORD BufferSize = sizeof(value);
 
 	auto result = RegGetValue(
@@ -56,13 +56,13 @@ int GetBuildNumber() {
 		"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
 		"CurrentBuild",
 		RRF_RT_REG_SZ,
-		0,
-		&value,
+		nullptr,
+		value,
 		&BufferSize
 	);
 
 	if (result == ERROR_SUCCESS) {
-		return std::atoi(value.data());
+		return std::atoi(value);
 	} else {
 		return 0;
 	}
