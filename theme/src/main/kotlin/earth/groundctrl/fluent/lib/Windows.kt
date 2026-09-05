@@ -4,8 +4,6 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 object Windows {
-    private external fun isdarkmode(): Boolean
-
     private external fun setmica(title: String, useMica: Boolean): Int
     private external fun setheaderbar(title: String, useHeaderBar: Boolean): Int
     private external fun setdragarea(x: Int, width: Int, scale: Double)

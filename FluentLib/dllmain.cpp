@@ -47,35 +47,6 @@ double display_scale = 1.0;
 
 WNDPROC wpOrigWndProc;
 
-/**
- * Adapted from:
- * dgellow, 2022-01-18
- * https://stackoverflow.com/a/70753913
- * CC BY-SA 3.0
- * https://creativecommons.org/licenses/by-sa/3.0/
- */
-bool is_dark_theme() {
-	std::string value;
-	DWORD BufferSize = sizeof(value);
-
-	auto result = RegGetValue(
-		HKEY_LOCAL_MACHINE,
-		"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-		"AppsUseLightTheme",
-		RRF_RT_REG_SZ,
-		nullptr,
-		&value,
-		&BufferSize
-	);
-
-	if (result == ERROR_SUCCESS) {
-		return value.data() == "0";
-	} else {
-		/* Something went wrong, just assume dark mode is not set. */
-		return false;
-	}
-}
-
 int GetBuildNumber() {
 	std::string value;
 	DWORD BufferSize = sizeof(value);
@@ -251,11 +222,6 @@ Java_earth_groundctrl_fluent_lib_Windows_setheaderbar(JNIEnv * env, jobject, jst
 	env->ReleaseStringUTFChars(title, windowTitle);
 
 	return 0;
-}
-
-extern "C" JNIEXPORT bool JNICALL
-Java_earth_groundctrl_fluent_lib_Windows_isdarkmode(JNIEnv * env, jobject) {
-	return is_dark_theme();
 }
 
 extern "C" JNIEXPORT void JNICALL
