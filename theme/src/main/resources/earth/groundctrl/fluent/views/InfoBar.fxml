@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.text.TextFlow?>
 <?import javafx.scene.text.Text?>
+<?import earth.groundctrl.fluent.views.InfoBarMessagePanel?>
 <fx:root type="HBox" styleClass="info-bar" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml" fillHeight="false" managed="${controller.isOpen}" visible="${controller.isOpen}">
-	<Label fx:id="icon" styleClass="icon, info-bar-icon" text="${controller.severity.icon}" managed="${controller.isIconVisible}" visible="${controller.isIconVisible}"/>
-	<TextFlow styleClass="message-container">
-		<Text fx:id="title" styleClass="fluent, body-strong"/>
-		<Pane minWidth="12.0"/>
-		<Text fx:id="message"/>
-	</TextFlow>
-	<Pane HBox.hgrow="ALWAYS" />
-	<Button fx:id="closeButton" styleClass="close-button, borderless-button" text="" managed="${controller.isCloseable}" visible="${controller.isCloseable}"/>
+	<StackPane styleClass="icon-stack" managed="${controller.isIconVisible}" visible="${controller.isIconVisible}">
+		<Label styleClass="icon-circle" text="&#xF136;"/>
+		<Label fx:id="icon" styleClass="icon-glyph" text="${controller.severity.glyph}"/>
+	</StackPane>
+	<InfoBarMessagePanel styleClass="message-container" HBox.hgrow="ALWAYS">
+		<Text fx:id="title" styleClass="fluent, body-strong, info-bar-title" textOrigin="TOP"/>
+		<Text fx:id="message" styleClass="info-bar-message" textOrigin="TOP"/>
+	</InfoBarMessagePanel>
+	<Button fx:id="closeButton" styleClass="close-button, borderless-button" text="&#xE711;" managed="${controller.isCloseable}" visible="${controller.isCloseable}">
+		<HBox.margin>
+			<Insets top="5.0" right="5.0"/>
+		</HBox.margin>
+	</Button>
 </fx:root>

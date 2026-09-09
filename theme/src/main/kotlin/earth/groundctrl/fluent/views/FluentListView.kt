@@ -2,7 +2,6 @@ package earth.groundctrl.fluent.views
 
 import javafx.scene.control.ListCell
 import javafx.scene.control.ListView
-import javafx.scene.control.Skin
 import javafx.scene.control.skin.ListViewSkin
 import javafx.scene.layout.Pane
 import javafx.util.Callback
@@ -30,7 +29,6 @@ class FluentListViewSkin<T>(control: ListView<T>) : ListViewSkin<T>(control) {
     }
 
     init {
-        skinnable.styleClass.add("fluent-list-view")
         virtualFlow.cellFactory = Callback { createCell() }
     }
 
@@ -39,11 +37,5 @@ class FluentListViewSkin<T>(control: ListView<T>) : ListViewSkin<T>(control) {
         cell.updateListView(skinnable)
 
         return cell
-    }
-}
-
-class FluentListView<T> : ListView<T>() {
-    override fun createDefaultSkin(): Skin<*>? {
-        return FluentListViewSkin(this)
     }
 }

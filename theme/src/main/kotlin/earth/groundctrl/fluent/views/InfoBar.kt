@@ -11,11 +11,12 @@ import javafx.scene.layout.HBox
 import javafx.scene.text.Text
 
 class InfoBar(title: String = "", message: String = "", severity: Severity = Severity.INFORMATIONAL) : HBox() {
-    enum class Severity(val label: String, val icon: String) {
-        INFORMATIONAL("informational", "\uF167"),
-        SUCCESS("success", "\uEC61"),
-        WARNING("warning", "\uE814"),
-        ERROR("error", "\uEB90");
+    /* InfoBar_themeresources.xaml's own InfoBar{Severity}IconGlyph */
+    enum class Severity(val label: String, val glyph: String) {
+        INFORMATIONAL("informational", "\uF13F"),
+        SUCCESS("success", "\uF13E"),
+        WARNING("warning", "\uF13C"),
+        ERROR("error", "\uF13D");
     }
 
     @FXML

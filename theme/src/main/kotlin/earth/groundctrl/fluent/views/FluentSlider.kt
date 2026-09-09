@@ -4,72 +4,61 @@ import javafx.animation.Interpolator
 import javafx.animation.KeyFrame
 import javafx.animation.KeyValue
 import javafx.animation.Timeline
-import javafx.beans.property.SimpleIntegerProperty
-import javafx.beans.property.SimpleStringProperty
+import javafx.application.Platform
+import javafx.beans.binding.Bindings
+import javafx.beans.property.SimpleDoubleProperty
 import javafx.scene.control.Slider
 import javafx.scene.control.skin.SliderSkin
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.StackPane
 import javafx.util.Duration
-import kotlin.math.roundToInt
 
-class FluentSliderSkin(slider: Slider) : SliderSkin(slider) {
-    private val thumb = skinnable.lookup(".thumb") as StackPane
-    private val track = skinnable.lookup(".track") as StackPane
+/* Slider_themeresources.xaml */
+private const val NORMAL_DOT_DIAMETER = 12.0
+private const val HOVER_DOT_DIAMETER = 14.0
+private const val PRESSED_DOT_DIAMETER = 10.0
+private val TRANSITION_DURATION = Duration.millis(150.0)
 
+class FluentSliderSkin(control: Slider) : SliderSkin(control) {
     init {
-        val radiusProperty = SimpleIntegerProperty(6)
-        thumb.styleProperty().bind(
-            SimpleStringProperty("-fx-background-insets: 0, 1,")
-                .concat(radiusProperty)
-        )
+        val track = skinnable.lookup(".track") as? StackPane
+        track?.styleProperty()?.bind(Bindings.createStringBinding(
+            {
+                val range = skinnable.max - skinnable.min
+                val fraction = if (range > 0.0) ((skinnable.value - skinnable.min) / range * 100.0) else 0.0
+                "-fx-background-color: linear-gradient(to right, -fx-accent $fraction%, -slider-track-color $fraction%);"
+            },
+            skinnable.valueProperty(), skinnable.minProperty(), skinnable.maxProperty(),
+        ))
 
-        /* This isn't pretty, but it works for now */
-        track.styleProperty().bind(
-            SimpleStringProperty("-fx-background-color: linear-gradient(to right, -fx-accent ")
-                .concat(skinnable.valueProperty().map {
-                    if (skinnable.max > 0.0) {
-                        ((skinnable.valueProperty().get() / skinnable.max) * 100).roundToInt() / 100.0
-                    } else {
-                        0.0
-                    }
-                })
-                .concat(", slider-track-color ")
-                .concat(skinnable.valueProperty().map {
-                    if (skinnable.max > 0.0) {
-                        ((skinnable.valueProperty().get() / skinnable.max) * 100).roundToInt() / 100.0
-                    } else {
-                        0.0
-                    }
-                })
-                .concat(");")
-        )
+        val thumb = skinnable.lookup(".thumb") as? StackPane
+        thumb?.let { thumbNode ->
+            Platform.runLater {
+                fun insetFor(diameter: Double) = (thumbNode.width - diameter) / 2.0
 
-        val scaleMoveIn = Timeline(
-            KeyFrame(Duration.millis(0.0), KeyValue(radiusProperty, 6)),
-            KeyFrame(Duration.millis(100.0), KeyValue(radiusProperty, 4, Interpolator.EASE_IN))
-        )
-        val scaleMoveOut = Timeline(
-            KeyFrame(Duration.millis(0.0), KeyValue(radiusProperty, 4)),
-            KeyFrame(Duration.millis(100.0), KeyValue(radiusProperty, 6, Interpolator.EASE_OUT))
-        )
-        val scalePressed = Timeline(
-            KeyFrame(Duration.millis(0.0), KeyValue(radiusProperty, 4)),
-            KeyFrame(Duration.millis(60.0), KeyValue(radiusProperty, 7, Interpolator.EASE_IN))
-        )
-        val scaleReleased = Timeline(
-            KeyFrame(Duration.millis(0.0), KeyValue(radiusProperty, 7)),
-            KeyFrame(Duration.millis(60.0), KeyValue(radiusProperty, 4, Interpolator.EASE_IN))
-        )
-        thumb.addEventFilter(MouseEvent.MOUSE_ENTERED) { scaleMoveIn.play() }
-        thumb.addEventFilter(MouseEvent.MOUSE_EXITED) { scaleMoveOut.play() }
-        thumb.addEventFilter(MouseEvent.MOUSE_PRESSED) { scalePressed.play() }
-        thumb.addEventFilter(MouseEvent.MOUSE_RELEASED) { scaleReleased.play() }
-    }
+                val dotInset = SimpleDoubleProperty(insetFor(NORMAL_DOT_DIAMETER))
+                thumbNode.styleProperty().bind(Bindings.createStringBinding(
+                    { "-fx-background-insets: 0, ${dotInset.get()};" },
+                    dotInset,
+                ))
 
-    override fun dispose() {
-        thumb.styleProperty().unbind()
-        track.styleProperty().unbind()
-        super.dispose()
+                fun animateTo(diameter: Double) {
+                    Timeline(
+                        KeyFrame(TRANSITION_DURATION, KeyValue(dotInset, insetFor(diameter), Interpolator.EASE_BOTH)),
+                    ).play()
+                }
+
+                thumbNode.addEventFilter(MouseEvent.MOUSE_ENTERED) { animateTo(HOVER_DOT_DIAMETER) }
+                thumbNode.addEventFilter(MouseEvent.MOUSE_EXITED) { animateTo(NORMAL_DOT_DIAMETER) }
+                thumbNode.addEventFilter(MouseEvent.MOUSE_PRESSED) { animateTo(PRESSED_DOT_DIAMETER) }
+                thumbNode.addEventFilter(MouseEvent.MOUSE_RELEASED) {
+                    animateTo(if (thumbNode.isHover) HOVER_DOT_DIAMETER else NORMAL_DOT_DIAMETER)
+                }
+
+                skinnable.disabledProperty().addListener { _, _, isDisabled ->
+                    dotInset.set(insetFor(if (isDisabled) HOVER_DOT_DIAMETER else NORMAL_DOT_DIAMETER))
+                }
+            }
+        }
     }
 }

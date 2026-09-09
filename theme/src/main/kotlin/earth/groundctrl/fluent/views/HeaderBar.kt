@@ -2,7 +2,6 @@ package earth.groundctrl.fluent.views
 
 import earth.groundctrl.fluent.lib.Windows
 import javafx.beans.DefaultProperty
-import javafx.beans.InvalidationListener
 import javafx.scene.Node
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
@@ -23,13 +22,13 @@ class HeaderBar : HBox {
 
 class DragPane : Pane() {
     init {
-        widthProperty().addListener(InvalidationListener {
+        widthProperty().addListener {
             val currentScale = Screen.getPrimary().outputScaleX
             Windows.setDragArea(layoutX.toInt(), width.toInt(), currentScale)
-        })
-        layoutXProperty().addListener(InvalidationListener {
+        }
+        layoutXProperty().addListener {
             val currentScale = Screen.getPrimary().outputScaleX
             Windows.setDragArea(layoutX.toInt(), width.toInt(), currentScale)
-        })
+        }
     }
 }
