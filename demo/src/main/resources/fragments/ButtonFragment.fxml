@@ -22,7 +22,7 @@
 						<Button text="Disabled FXML button" disable="true"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%button.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -50,7 +50,7 @@
 						</Button>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%button.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -73,7 +73,7 @@
 						</HBox>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%button.sample3" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -84,11 +84,11 @@
 
 				<VBox styleClass="example">
 					<HBox styleClass="example-header" spacing="8.0">
-						<Button text="Accent style button" styleClass="accent-button"/>
-						<Button text="Disabled accent style button" styleClass="accent-button" disable="true"/>
+						<Button text="Accent style button" styleClass="accent"/>
+						<Button text="Disabled accent style button" styleClass="accent" disable="true"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%button.sample4" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

@@ -20,7 +20,7 @@
 						<Label text="I am a Label."/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%label.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -34,7 +34,7 @@
 						<Label text="I am a styled Label." style="-fx-font-family: 'Comic Sans MS'; -fx-font-style: italic;"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%label.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -60,7 +60,7 @@
 						</TextFlow>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%label.sample3" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

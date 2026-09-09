@@ -25,7 +25,7 @@
 						</ScrollPane>
 					</StackPane>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%scrollview.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

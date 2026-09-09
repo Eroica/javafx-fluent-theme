@@ -30,10 +30,12 @@
 							<Label text="Select which app theme to display" styleClass="fluent, caption"/>
 						</VBox>
 
-						<ChoiceBox disable="true" value="Light">
+						<ChoiceBox fx:id="themeChoice" value="System">
 							<items>
 								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="System"/>
 									<String fx:value="Light"/>
+									<String fx:value="Dark"/>
 								</FXCollections>
 							</items>
 						</ChoiceBox>
@@ -49,7 +51,7 @@
 						<VBox spacing="12.0" HBox.hgrow="ALWAYS">
 							<VBox>
 								<Label styleClass="fluent, body-strong">JavaFX Fluent UI Gallery</Label>
-								<Label styleClass="fluent, caption">© 2023–2025 Eroica</Label>
+								<Label styleClass="fluent, caption">© 2023–2026 Eroica</Label>
 							</VBox>
 
 							<VBox spacing="8.0">
@@ -78,7 +80,7 @@
 
 						<TextFlow>
 							<Text>This application uses the libraries that are available under the Apache 2.0 license, which can be obtained from&#x00a0;</Text>
-							<Hyperlink text="https://www.apache.org/licenses/LICENSE-2.0" onAction="#onHyperlinkClick"/>
+							<Hyperlink userData="https://www.apache.org/licenses/LICENSE-2.0" text="https://www.apache.org/licenses/LICENSE-2.0" onAction="#onHyperlinkClick"/>
 							<Text>.</Text>
 						</TextFlow>
 

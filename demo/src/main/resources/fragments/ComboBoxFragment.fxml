@@ -16,7 +16,7 @@
 			<Label text="Use a ComboBox when you need to conserve on-screen space and when users select only one option at a time. A ComboBox shows only the currently selected item." wrapText="true"/>
 
 			<VBox spacing="12.0">
-				<Label text="A ComboBox with items defined inline and its width set. Use FluentComboBox to get fluent animations." wrapText="true" styleClass="fluent, body-strong"/>
+				<Label text="A ComboBox with items defined inline and its width set. Use FluentComboBox for a WinUI-themed dropdown list." wrapText="true" styleClass="fluent, body-strong"/>
 
 				<VBox styleClass="example">
 					<VBox styleClass="example-header" spacing="8.0">
@@ -45,7 +45,7 @@
 						</FluentComboBox>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%combobox.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -70,7 +70,7 @@
 						</ChoiceBox>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%combobox.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -105,7 +105,7 @@
 						<Label fx:id="fontSizeLabel" text="You can set the font size used for this text."/>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%combobox.sample3" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

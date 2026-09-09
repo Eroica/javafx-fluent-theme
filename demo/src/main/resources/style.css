@@ -1,4 +1,4 @@
-/* Copyright (C) 2023-2025 Eroica
+/* Copyright (C) 2023-2026 Eroica
  *
  * This software is provided 'as-is', without any express or implied
  * warranty.  In no event will the authors be held liable for any damages
@@ -18,13 +18,13 @@
  */
 
 .no-focus .content-container {
-	-fx-background-color: #e1e6ea, #f9f9f9;
+	-fx-background-color: -fx-outer-border, -fx-background;
 	-fx-background-radius: 10 0 0 0, 9 0 0 0;
 	-fx-background-insets: 0, 1;
 	-fx-padding: 1;
 }
 .no-focus .content-container > * > .scroll-pane {
-	-fx-background-color: #f9f9f9;
+	-fx-background-color: -fx-background;
 }
 
 .use-mica.activity,
@@ -32,29 +32,17 @@
 	-fx-background-color: transparent;
 }
 
-.sidebar {
-}
 .sidebar-footer {
 	-fx-border-width: 1 0 0 0;
 	-fx-border-style: solid;
-	-fx-border-color: #e5e5e5;
+	-fx-border-color: -fx-outer-border;
 }
 .sidebar-footer .button {
 	-fx-alignment: CENTER_LEFT;
 }
-.sidebar-footer .button:hover {
-	-fx-background-color: rgba(0, 0, 0, .03);
-}
 .sidebar .tree-cell {
 	-fx-content-display: graphic-only;
 	-fx-skin: "views.SidebarCellSkin";
-}
-.sidebar .tree-cell:filled:hover,
-.sidebar .tree-cell:selected {
-	-fx-background-color: rgba(0, 0, 0, .03);
-}
-.sidebar .tree-cell:filled:pressed {
-	-fx-background-color: rgba(0, 0, 0, .05);
 }
 .sidebar .tree-disclosure-node {
 	-fx-padding: 14 22 14 22;
@@ -71,7 +59,7 @@
 }
 
 .content-container {
-	-fx-background-color: #e1e6ea, #f7fafc;
+	-fx-background-color: -fx-outer-border, -fx-background;
 	-fx-background-radius: 10 0 0 0, 9 0 0 0;
 	-fx-background-insets: 0, 1;
 	-fx-padding: 1;
@@ -80,11 +68,11 @@
 	-fx-padding: 36 0 0 36;
 }
 .content-container > * > .scroll-pane {
-	-fx-background-color: #f7fafc;
+	-fx-background-color: -fx-background;
 }
 
 .card {
-	-fx-background-color: #e5e5e5, #fbfbfb;
+	-fx-background-color: -fx-outer-border, -fx-control-inner-background;
 	-fx-background-insets: 0, 1;
 	-fx-background-radius: 4, 3;
 }
@@ -100,7 +88,7 @@
 	-fx-padding: 16 16 16 36;
 }
 .example > .example-header {
-	-fx-background-color: #e9e9e9, #f3f3f3;
+	-fx-background-color: -fx-outer-border, -fx-control-inner-background;
 	-fx-background-insets: 0, 1;
 	-fx-background-radius: 10 10 0 0, 9 9 0 0;
 	-fx-padding: 12 12 12 12;
@@ -116,13 +104,13 @@
 	-fx-background-color: transparent, transparent;
 }
 .code-sample .scroll-pane .content {
-	-fx-background-color: #f4f4f4;
+	-fx-background-color: -fx-control-inner-background;
 	-fx-padding: 8;
 }
 
 .type-ramp .label.heading {
 	-fx-font-size: 12px;
-	-fx-text-fill: #5d5d5d;
+	-fx-text-fill: -fx-text-base-color;
 }
 .type-ramp .label {
 	-fx-padding: 8 8 8 8;
@@ -130,33 +118,34 @@
 
 .home-fragment {
 	-fx-padding: 68 36 12 36;
-	-fx-min-height: 600;
+}
+.home-fragment-top {
+	-fx-background-color: -fx-base;
 	-fx-background-image: url("/GalleryHeaderImage.png");
 	-fx-background-repeat: no-repeat;
-	-fx-background-position: 0 0;
+	-fx-background-radius: 9;
 	-fx-background-size: cover;
-	-fx-background-radius: 10 0 0 0;
 }
 .home-card {
 	-fx-spacing: 4;
 	-fx-pref-width: 195;
 	-fx-padding: 30 12 12 23;
-	-fx-background-color: #f9f9f9;
+	-fx-background-color: -fx-control-inner-background;
 	-fx-background-radius: 5;
-	-fx-border-color: rgba(0, 0, 0, .1);
+	-fx-border-color: -fx-outer-border;
 	-fx-border-width: 1;
 	-fx-border-radius: 5;
 }
 .home-card:hover {
 	-fx-cursor: hand;
-	-fx-background-color: #e5e5e5;
-	-fx-border-color: rgba(0, 0, 0, .25);
+	-fx-background-color: -fx-hover-base;
+	-fx-border-color: -fx-inner-border;
 }
 .home-card > .body-large {
 	-fx-padding: 8 0 0 0;
 }
 .home-card > .caption {
-	-fx-text-fill: #555555;
+	-fx-text-fill: -fx-text-base-color;
 }
 .home-card > .footer {
 	-fx-alignment: CENTER_RIGHT;
@@ -167,17 +156,20 @@
 	-fx-spacing: 12;
 	-fx-pref-width: 360;
 }
+.home-fragment .sample-card:hover {
+	-fx-cursor: hand;
+	-fx-background-color: -fx-inner-border, -fx-hover-base;
+}
 
 .example-tree-view-container {
 	-fx-max-width: 320;
-	-fx-border-color: -ControlElevationBorderBrush -ControlElevationBorderBrush -ControlStrongStrokeColorDefaultBrush -ControlElevationBorderBrush;
+	-fx-border-color: -fx-outer-border -fx-outer-border -fx-inner-border -fx-outer-border;
 	-fx-border-width: 1;
 	-fx-border-style: solid;
 }
-
 .example-list-view-container {
 	-fx-max-width: 320;
-	-fx-border-color: -ControlStrongStrokeColorDefaultBrush;
+	-fx-border-color: -fx-inner-border;
 	-fx-border-width: 1;
 	-fx-border-style: solid;
 }

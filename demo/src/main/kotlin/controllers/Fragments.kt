@@ -7,11 +7,13 @@ import fragments.HeaderBarFragment
 import fragments.HomeFragment
 import fragments.InfoBarFragment
 import fragments.ProgressBarFragment
+import fragments.SettingsFragment
 import fragments.SystemBackdropFragment
 import javafx.beans.NamedArg
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
+import javafx.scene.Node
 import javafx.scene.control.Hyperlink
 import javafx.scene.layout.Pane
 import javafx.scene.layout.VBox
@@ -65,7 +67,7 @@ enum class FragmentType(private val factory: () -> IFragment) {
     /* Windowing */
     HeaderBar({ HeaderBarFragment() }),
 
-    Settings({ BaseFragment("SettingsFragment.fxml") });
+    Settings({ SettingsFragment() });
 
     operator fun invoke(): IFragment = factory()
 }
@@ -95,7 +97,7 @@ open class BaseFragment(@NamedArg("resourceId") private val resourceId: String) 
 
     @FXML
     private fun onHyperlinkClick(event: ActionEvent) {
-        activity.openLink((event.source as Hyperlink).text)
+        activity.openLink((event.source as Node).userData.toString())
         event.consume()
     }
 }

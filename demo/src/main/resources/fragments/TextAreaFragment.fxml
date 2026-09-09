@@ -20,7 +20,7 @@
 						<TextField maxWidth="64.0" disable="true"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%textfield.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -35,7 +35,7 @@
 						<TextField maxWidth="100.0" promptText="Name" disable="true"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%textfield.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -49,7 +49,7 @@
 						<TextField maxWidth="480.0" text="I am super excited to be here" style="-fx-font-size: 20; -fx-font-family: 'Segoe UI Semibold'; -fx-font-style: italic; -fx-text-fill: #5178be;"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%textfield.sample3" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -63,7 +63,7 @@
 						<TextArea maxWidth="400.0" style="-fx-highlight-fill: green;"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%textfield.sample4" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

@@ -16,11 +16,11 @@
 
 				<VBox styleClass="example">
 					<HBox styleClass="example-header" spacing="8.0">
-						<Hyperlink text="javafx-fluent-theme home page"/>
+						<Hyperlink onAction="#onHyperlinkClick" userData="https://github.com/Eroica/javafx-fluent-theme" text="javafx-fluent-theme home page"/>
 						<Hyperlink text="Disabled hyperlink" disable="true"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%hyperlink.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

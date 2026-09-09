@@ -19,7 +19,7 @@
 						<Slider/>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%slider.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -33,7 +33,7 @@
 						<Slider orientation="VERTICAL"/>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%slider.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

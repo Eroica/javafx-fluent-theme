@@ -11,7 +11,7 @@
 		<padding>
 			<Insets top="4.0" right="8.0" bottom="4.0" left="8.0"/>
 		</padding>
-		<Button text="&#xe830;" styleClass="borderless-button, back-button" disable="true" />
+		<Button text="&#xe72b;" styleClass="subtle, fluent, icon" disable="true" />
 		<DragPane HBox.hgrow="ALWAYS"/>
 	</HeaderBar>
 
@@ -275,9 +275,9 @@
 					<Insets top="12.0" right="4.0" bottom="4.0" left="4.0" />
 				</padding>
 
-				<Button text="Settings" prefWidth="320.0" prefHeight="36.0" onAction="#onSettingsClick" styleClass="borderless-button, icon-button">
+				<Button text="Settings" prefWidth="320.0" prefHeight="36.0" onAction="#onSettingsClick" styleClass="subtle" graphicTextGap="8.0">
 					<graphic>
-						<Text></Text>
+						<Text style="-fx-font-family: 'Segoe Fluent Icons'">&#xe713;</Text>
 					</graphic>
 				</Button>
 			</StackPane>

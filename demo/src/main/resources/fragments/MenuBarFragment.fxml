@@ -38,7 +38,7 @@
 						</MenuBar>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%menubar.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -104,7 +104,7 @@
 						</MenuBar>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%menubar.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -153,7 +153,7 @@
 						</MenuBar>
 					</VBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%menubar.sample3" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

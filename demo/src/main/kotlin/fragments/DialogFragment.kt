@@ -1,6 +1,8 @@
 package fragments
 
 import controllers.BaseFragment
+import earth.groundctrl.fluent.controllers.FluentDialog
+import earth.groundctrl.fluent.controllers.FluentStageDialog
 import javafx.beans.property.ReadOnlyStringProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.event.ActionEvent
@@ -8,25 +10,8 @@ import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.scene.control.ButtonBar
 import javafx.scene.control.ButtonType
-import javafx.scene.control.Dialog
 import javafx.stage.Modality
 import javafx.stage.Stage
-
-class FullDialog(private val parentWindow: Stage) {
-    private val dialog: Stage = FXMLLoader(javaClass.getResource("/dialogs/FullDialog.fxml")).apply {
-        setController(this@FullDialog)
-    }.load()
-
-    init {
-        dialog.isResizable = false
-        dialog.initOwner(parentWindow)
-        dialog.initModality(Modality.WINDOW_MODAL)
-    }
-
-    fun show() {
-        dialog.show()
-    }
-}
 
 class DialogFragment : BaseFragment("DialogFragment.fxml") {
     private val dialogResult = SimpleStringProperty()
@@ -34,8 +19,8 @@ class DialogFragment : BaseFragment("DialogFragment.fxml") {
     fun getDialogResult() = dialogResult.get()
     fun dialogResultProperty(): ReadOnlyStringProperty = dialogResult
 
-    private val dialog: Dialog<ButtonType> by lazy {
-        FXMLLoader(javaClass.getResource("/dialogs/Dialog.fxml")).load<Dialog<ButtonType>>().apply {
+    private val dialog: FluentDialog<ButtonType> by lazy {
+        FXMLLoader(javaClass.getResource("/dialogs/Dialog.fxml")).load<FluentDialog<ButtonType>>().apply {
             isResizable = false
             initOwner(activity.window)
             initModality(Modality.WINDOW_MODAL)
@@ -44,7 +29,13 @@ class DialogFragment : BaseFragment("DialogFragment.fxml") {
         }
     }
 
-    private val fullDialog: FullDialog by lazy { FullDialog(activity.window) }
+    private val fullDialog: FluentStageDialog by lazy {
+        val fullDialog = FXMLLoader(FluentDemo::class.java.getResource("/dialogs/FullDialog.fxml")).load<FluentStageDialog>()
+        fullDialog.isResizable = false
+        fullDialog.initOwner(activity.window)
+        fullDialog.initModality(Modality.WINDOW_MODAL)
+        fullDialog
+    }
 
     @FXML
     private fun onOpenClick(event: ActionEvent) {

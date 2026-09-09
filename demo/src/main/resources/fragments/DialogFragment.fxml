@@ -21,7 +21,7 @@
 						<Label text="${controller.dialogResult}"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%dialog.sample1" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>
@@ -35,7 +35,7 @@
 						<Button text="Show dialog" onAction="#onOpenFullClick"/>
 					</HBox>
 
-					<TitledPane expanded="false" styleClass="example-footer" text="Source code">
+					<TitledPane expanded="false" text="Source code">
 						<TextArea text="%dialog.sample2" editable="false" styleClass="code-sample"/>
 					</TitledPane>
 				</VBox>

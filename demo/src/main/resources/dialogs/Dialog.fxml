@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import earth.groundctrl.fluent.controllers.FluentDialog?>
 <?import javafx.scene.control.ButtonType?>
-<?import javafx.scene.control.Dialog?>
 <?import javafx.scene.control.DialogPane?>
-<Dialog xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml">
+<FluentDialog xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml">
 	<dialogPane>
 		<DialogPane headerText="Save your work?">
 			<contentText>Lorem ipsum dolor sit amet, adipisicing elit.</contentText>
-			<buttonTypes>
-				<ButtonType fx:constant="CANCEL"/>
-				<ButtonType text="Don’t save" buttonData="NO"/>
-				<ButtonType text="Save" buttonData="OK_DONE"/>
-			</buttonTypes>
+			<ButtonType fx:constant="CANCEL" />
+			<ButtonType text="Don’t save" buttonData="NO" />
+			<ButtonType text="Save" buttonData="OK_DONE" />
 		</DialogPane>
 	</dialogPane>
-</Dialog>
+</FluentDialog>

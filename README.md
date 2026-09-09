@@ -115,7 +115,7 @@ An example header bar:
     <padding>
         <Insets top="4.0" right="8.0" bottom="4.0" left="8.0"/>
     </padding>
-    <Button text="&#xe830;" styleClass="borderless-button, back-button" disable="true"></Button>
+    <Button text="&#xe830;" styleClass="subtle" disable="true"></Button>
     <DragPane HBox.hgrow="ALWAYS"/>
 </HeaderBar>
 ```

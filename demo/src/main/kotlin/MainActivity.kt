@@ -46,18 +46,17 @@ class MainActivity(
             load()
         }
 
-        sidebar.selectionModel.selectedItemProperty()
-            .addListener { _, _, treeItem ->
-                (treeItem.value as? SidebarItem)?.fragment?.let { on(IViewEvent.Select(it)) }
-            }
+        sidebar.selectionModel.selectedItemProperty().addListener { _, _, treeItem ->
+            (treeItem.value as? SidebarItem)?.fragment?.let { on(IViewEvent.Select(it)) }
+        }
 
-        isMicaEffectProperty().addListener(InvalidationListener {
+        isMicaEffectProperty().addListener {
             if (getIsMicaEffect()) {
                 styleClass.add("use-mica")
             } else {
                 styleClass.remove("use-mica")
             }
-        })
+        }
 
         on(IViewEvent.Select(FragmentType.Home))
     }
