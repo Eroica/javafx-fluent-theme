@@ -5,11 +5,12 @@ import java.io.InputStreamReader
 
 object Windows {
     private external fun setmica(title: String, useMica: Boolean): Int
+    private external fun setdark(title: String, useDark: Boolean): Int
     private external fun setheaderbar(title: String, useHeaderBar: Boolean): Int
     private external fun setdragarea(x: Int, width: Int, scale: Double)
 
     external fun buildnumber(): Int
-    external fun subclass(title: String, useMica: Boolean, useHeaderBar: Boolean): Int
+    external fun subclass(title: String, useMica: Boolean, useDark: Boolean, useHeaderBar: Boolean): Int
 
     fun setMicaFor(title: String, useMica: Boolean): Int {
         return setmica(title, useMica)
@@ -17,6 +18,10 @@ object Windows {
 
     fun setHeaderBarFor(title: String, useHeaderBar: Boolean): Int {
         return setheaderbar(title, useHeaderBar)
+    }
+
+    fun setDarkThemeFor(title: String, useDarkTheme: Boolean): Int {
+        return setdark(title, useDarkTheme)
     }
 
     fun setDragArea(x: Int, width: Int, scale: Double) {

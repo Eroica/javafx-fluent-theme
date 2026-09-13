@@ -175,6 +175,14 @@ void set_mica(HWND hWnd, BOOL is_set_mica) {
 	}
 }
 
+void set_dark(HWND hWnd, BOOL is_set_dark) {
+	if (is_set_dark) {
+		DwmSetWindowAttribute(hWnd, 20, &DWM_trueValue, sizeof(int));
+	} else {
+		DwmSetWindowAttribute(hWnd, 20, &DWM_falseValue, sizeof(int));
+	}
+}
+
 void set_headerbar(HWND hWnd, BOOL is_set_headerbar) {
 	if (is_set_headerbar) {
 		wpOrigWndProc = (WNDPROC)SetWindowLongPtr(hWnd, GWLP_WNDPROC, (LONG_PTR)AppWndProc);
@@ -197,6 +205,23 @@ Java_earth_groundctrl_fluent_lib_Windows_setmica(JNIEnv * env, jobject, jstring 
 
 	if (hWnd != NULL) {
 		set_mica(hWnd, static_cast<BOOL>(use_mica));
+	} else {
+		env->ReleaseStringUTFChars(title, windowTitle);
+		return -1;
+	}
+
+	env->ReleaseStringUTFChars(title, windowTitle);
+
+	return 0;
+}
+
+extern "C" JNIEXPORT int JNICALL
+Java_earth_groundctrl_fluent_lib_Windows_setdark(JNIEnv* env, jobject, jstring title, jboolean use_dark) {
+	const char* windowTitle = env->GetStringUTFChars(title, NULL);
+	HWND hWnd = FindWindow(NULL, windowTitle);
+
+	if (hWnd != NULL) {
+		set_dark(hWnd, static_cast<BOOL>(use_dark));
 	} else {
 		env->ReleaseStringUTFChars(title, windowTitle);
 		return -1;
@@ -240,15 +265,18 @@ Java_earth_groundctrl_fluent_lib_Windows_subclass(
 	jobject,
 	jstring title,
 	jboolean useMica,
+	jboolean useDark,
 	jboolean useHeaderBar
 ) {
 	BOOL use_mica = static_cast<BOOL>(useMica);
+	BOOL use_dark = static_cast<BOOL>(useDark);
 	BOOL use_headerbar = static_cast<BOOL>(useHeaderBar);
 	const char* windowTitle = env->GetStringUTFChars(title, NULL);
 	HWND hWnd = FindWindow(NULL, windowTitle);
 
 	if (hWnd != NULL) {
 		set_mica(hWnd, use_mica);
+		set_dark(hWnd, use_dark);
 		set_headerbar(hWnd, use_headerbar);
 	} else {
 		env->ReleaseStringUTFChars(title, windowTitle);
