@@ -19,7 +19,7 @@ javafx {
 dependencies {
     implementation(project(":theme"))
     // Replace the line above with this line when using a local package
-    // implementation("earth.groundctrl:javafx-fluent-theme:v2025.05")
+    // implementation("earth.groundctrl:javafx-fluent-theme:v2026.09")
 }
 
 tasks {
@@ -53,10 +53,10 @@ runtime {
         imageName = "JavaFX Fluent UI Gallery"
         skipInstaller = true
         imageOptions = listOf(
-            "--copyright", "Copyright (c) 2023-2025 Eroica",
+            "--copyright", "Copyright (c) 2023-2026 Eroica",
             "--vendor", "GROUNDCTRL",
         )
-        appVersion = "2025.05"
+        appVersion = "2026.09"
         options.addAll("--enable-native-access=javafx.graphics", "--enable-native-access=earth.groundctrl.fluent")
     }
 }

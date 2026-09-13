@@ -23,7 +23,7 @@ publishing {
 
             pom {
                 name.set("javafx-fluent-theme")
-                description.set("A custom theme for JavaFX following Windows 11's designs")
+                description.set("A custom theme for JavaFX based on Windows 11's fluent theme.")
                 url.set("https://github.com/Eroica/javafx-fluent-theme")
                 licenses {
                     license {
