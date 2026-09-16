@@ -16,6 +16,12 @@ In addition, you can [apply Windows 11's _Mica_ effect to your window](#enabling
 ![](/docs/ControlsDark.png)
 </details>
 
+
+<details><summary>Example light/dark change with accent color (video)</summary>
+
+<video src="https://github.com/user-attachments/assets/56c11ddd-b09f-4780-b6d1-2a5bfd828614"></video>
+</details>
+
 ## TL;DR
 
 * Download the JAR and `FluentLib.dll` (x64) from the [Releases](https://github.com/Eroica/javafx-fluent-theme/releases)
@@ -41,6 +47,7 @@ class FluentDemo : FluentApp() {
         primaryStage.scene = Scene(StackPane(), Color.TRANSPARENT)
     }
 }
+
 ```
 
 See [Usage](#usage) for detailed explanations.
